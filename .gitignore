@@ -1,0 +1,9 @@
+# Local tooling
+.claude/
+
+# Same page as index.html, kept for sending as a single file
+Rongo-ma-Tane-Sensory-Profile.html
+
+# Saved profiles and printouts hold real ākonga information. Never commit them.
+*.json
+*.pdf

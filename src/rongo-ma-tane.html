@@ -1,0 +1,1742 @@
+<title>Rongo mā Tāne Profile</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@500;600;700&display=swap">
+<style id="app-css">
+/* Layout: Soft and modern, from the design skill. Light only: pale sky page, white rounded cards with soft depth, pill tabs and buttons. */
+:root {
+  color-scheme: light;
+  --paper: #F0F9FF;
+  --surface: #FFFFFF;
+  --surface-2: #F7FBFE;
+  --ink: #0C4A6E;
+  --ink-2: #27445C;
+  --muted: #475569;
+  --line: #E0F2FE;
+  --line-strong: #BAE6FD;
+  --accent: #0369A1;
+  --accent-strong: #075985;
+  --accent-soft: #E0F2FE;
+  --accent-ring: #BAE6FD;
+  --on-accent: #FFFFFF;
+  --sun: #F59E0B;
+  --who-a: #2563EB; --who-w: #16A34A; --who-k: #9333EA; --on-who: #FFFFFF;
+  --danger: #DC2626; --on-danger: #FFFFFF;
+  --flag: #92400E; --flag-soft: #FEF3C7;
+  --note-bg: #FFFBEB; --note-line: #FDE68A; --note-ink: #92400E;
+  --s2: #C2410C; --s1: #FDBA74; --s0: #86EFAC; --a1: #7DD3FC; --a2: #0369A1;
+  --s2-ink: #FFFFFF; --s1-ink: #7C2D12; --s0-ink: #14532D; --a1-ink: #0C4A6E; --a2-ink: #FFFFFF;
+  --g1: #EF4444; --g2: #F97316; --g3: #EAB308; --g4: #84CC16; --g5: #22C55E;
+  --shadow: 0 1px 2px rgb(12 74 110 / .05), 0 8px 24px rgb(12 74 110 / .07);
+  --shadow-lg: 0 2px 4px rgb(12 74 110 / .06), 0 16px 40px rgb(12 74 110 / .10);
+  --font: "Open Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-head: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 16px;
+  --radius-sm: 12px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.55 var(--font); -webkit-text-size-adjust: 100%; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; font-family: var(--font-head); color: var(--ink); }
+p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.muted { color: var(--muted); }
+.wrap { max-width: 1100px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Header */
+.masthead { display: grid; gap: 16px; padding-block: 24px 16px; }
+.brand-card { display: flex; align-items: center; gap: 20px; padding: 20px 24px; border-radius: var(--radius); background: linear-gradient(135deg, var(--accent-soft), var(--surface) 70%); border: 1px solid var(--line); color: var(--ink); box-shadow: var(--shadow); }
+.brand-img { height: 88px; width: auto; flex: none; }
+.brand-mark { width: 76px; height: 76px; flex: none; }
+.brand-mark .bm-fill { fill: var(--accent-soft); }
+.brand-mark .bm-step { fill: none; stroke: var(--accent); stroke-width: 3; }
+.brand-mark .bm-cap { fill: var(--sun); }
+.brand-text { min-width: 0; }
+.brand-text h1 { font-size: 1.9rem; line-height: 1.15; font-weight: 600; letter-spacing: -.01em; }
+.brand-sub { font-size: 1rem; line-height: 1.3; font-weight: 500; color: var(--muted); margin-top: 2px; }
+.whakatauki { font-size: .95rem; font-style: italic; margin-top: 8px; color: var(--ink-2); }
+.whakatauki .trans { display: block; font-style: normal; font-size: .85rem; margin-top: 2px; }
+.toolbar-card { display: grid; gap: 12px; padding: 16px 20px; border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+.toolbar-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.learner-pick { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; color: var(--muted); min-width: 0; }
+.learner-pick select { min-width: 0; max-width: 16rem; padding: 9px 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); font-weight: 600; }
+.drive { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: .9rem; }
+.drive-label { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink-2); }
+.drive-label svg { width: 20px; height: 20px; }
+.drive-status { color: var(--muted); }
+.drive-status b { color: var(--ink); }
+.saved { font-size: .8rem; color: var(--muted); }
+.saved.bad { color: var(--danger); font-weight: 600; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 18px; min-height: 40px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); font-family: var(--font-head); font-weight: 600; font-size: .9rem; cursor: pointer; text-decoration: none; }
+.btn:hover { background: var(--accent-soft); border-color: var(--accent-ring); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+.btn-quiet { background: transparent; border-color: transparent; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.btn-quiet:hover { background: transparent; border-color: transparent; color: var(--ink); }
+.btn-danger { background: var(--danger); border-color: var(--danger); color: var(--on-danger); }
+.btn-small { min-height: 32px; padding: 4px 12px; font-size: .84rem; }
+.btn[disabled] { opacity: .55; cursor: progress; }
+
+/* Tab card */
+.tabbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6; background: var(--paper); padding-block: 0 8px; }
+.tabbar-in { display: flex; align-items: center; gap: 12px; padding: 6px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.mini { display: flex; align-items: center; gap: 8px; flex: none; font-weight: 600; font-family: var(--font-head); font-size: .9rem; max-width: 11rem; min-width: 0; padding: 0 12px 0 6px; border-right: 1px solid var(--line); }
+.mini span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tabs { display: flex; overflow-x: auto; scrollbar-width: none; min-width: 0; flex: 1; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { flex: none; display: grid; text-align: center; padding: 7px 14px; border: 0; border-radius: var(--radius-sm); background: transparent; cursor: pointer; color: var(--muted); }
+.tab:hover { color: var(--ink); background: var(--surface-2); }
+.tab[aria-selected="true"] { background: var(--accent); color: var(--on-accent); }
+.tab-label { font-family: var(--font-head); font-weight: 600; font-size: .95rem; line-height: 1.25; }
+.tab-sub { font-size: .72rem; opacity: .85; }
+
+/* Avatars and photos */
+.avatar { display: grid; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-family: var(--font-head); font-weight: 700; overflow: hidden; flex: none; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.av-sm { width: 32px; height: 32px; font-size: .75rem; }
+.av-md { width: 112px; height: 112px; font-size: 2rem; }
+.av-lg { width: 160px; height: 160px; font-size: 2.75rem; box-shadow: 0 0 0 4px var(--accent-ring), var(--shadow-lg); }
+.photo { display: grid; justify-items: center; gap: 10px; align-content: start; }
+.photo-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+
+/* Panel and cards */
+#panel { display: grid; gap: 20px; padding-block: 8px 40px; }
+.phead { display: grid; gap: 6px; padding: 8px 4px 0; }
+.phead-title { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.phead h2 { font-size: 1.75rem; line-height: 1.15; font-weight: 600; letter-spacing: -.01em; }
+.phead-sub { color: var(--muted); font-size: 1rem; }
+.lead { max-width: 70ch; font-size: 1.05rem; color: var(--ink-2); }
+.whofills { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .9rem; color: var(--muted); }
+.whofills b { font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-strong); background: var(--accent-soft); padding: 3px 8px; border-radius: var(--radius-sm); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; display: grid; gap: 16px; min-width: 0; }
+.card > h3 { font-size: 1.2rem; line-height: 1.3; font-weight: 600; }
+.card h4 { font-size: 1.02rem; font-weight: 600; margin-top: 4px; }
+.card-intro { color: var(--muted); max-width: 70ch; font-size: .95rem; }
+.hint { color: var(--muted); font-size: .88rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.who-grid { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: start; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.fields .span-2 { grid-column: 1 / -1; }
+
+/* Fields */
+.field { display: grid; gap: 5px; min-width: 0; }
+.field label { font-weight: 500; font-size: .9rem; color: var(--ink-2); }
+.field input, .field textarea, .field select { width: 100%; padding: 9px 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); font-size: 1rem; line-height: 1.45; box-shadow: 0 1px 2px rgb(0 0 0 / .05); }
+.field textarea { resize: vertical; min-height: 3.2em; }
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+.print-text { display: none; white-space: pre-wrap; }
+
+/* Tick boxes, as in version 3 */
+.chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 4px 20px; }
+.chip { display: flex; align-items: center; gap: 12px; min-height: 38px; padding: 4px 2px; border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--ink); font-size: .98rem; line-height: 1.3; text-align: left; cursor: pointer; }
+.chip::before { content: ""; flex: none; width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--line-strong); background: var(--surface) center / 13px no-repeat; }
+.chip[role="radio"]::before { border-radius: 50%; }
+.chip:hover::before { border-color: var(--accent); }
+.chip[aria-pressed="true"]::before, .chip[aria-checked="true"]::before { background-color: var(--accent); border-color: var(--accent); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.chip[aria-pressed="true"], .chip[aria-checked="true"] { font-weight: 600; }
+.tag { display: inline-flex; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: .88rem; font-weight: 500; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Coloured scales: seeks (left) to avoids (right) */
+/* Segmented bars: one connected control per row; the chosen option fills */
+.lk-row, .gauge-btns, .rate-btns { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 3px; padding: 3px; border: 1px solid var(--line-strong); border-radius: 14px; background: var(--surface); }
+.lk { --c: var(--s0); --ci: var(--s0-ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 46px; padding: 6px 4px; border: 0; border-radius: 11px; background: transparent; color: var(--muted); font-size: .8rem; line-height: 1.15; text-align: center; cursor: pointer; }
+.lk::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.lk-face::before { display: none; }
+.lk:hover { background: color-mix(in srgb, var(--c) 14%, var(--surface)); color: var(--ink); }
+.lk[aria-checked="true"] { background: var(--c); color: var(--ci); font-weight: 700; }
+.lk[aria-checked="true"]::before { background: currentColor; opacity: .7; }
+.lk svg { width: 28px; height: 28px; }
+.lk-face { min-height: 66px; }
+.lk:focus-visible, .gb:focus-visible, .rb:focus-visible { outline-offset: -3px; }
+.s2 { --c: var(--s2); --ci: var(--s2-ink); }
+.s1 { --c: var(--s1); --ci: var(--s1-ink); }
+.s0 { --c: var(--s0); --ci: var(--s0-ink); }
+.a1 { --c: var(--a1); --ci: var(--a1-ink); }
+.a2 { --c: var(--a2); --ci: var(--a2-ink); }
+.scale-legend { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-radius: var(--radius-sm); overflow: hidden; font-size: .78rem; text-align: center; }
+.scale-legend span { background: var(--c); color: var(--ci); padding: 6px 4px; font-weight: 700; }
+.scale-ends { display: flex; justify-content: space-between; gap: 12px; font-size: .82rem; color: var(--muted); }
+.feel-list { display: grid; }
+.feel { display: grid; grid-template-columns: minmax(9rem, 15rem) minmax(0, 1fr); gap: 14px; align-items: center; padding-block: 12px; border-top: 1px solid var(--line); }
+.feel:first-child { border-top: 0; padding-top: 0; }
+.feel-q { font-weight: 600; font-size: 1rem; }
+.feel-q small { display: block; font-weight: 400; color: var(--muted); font-size: .82rem; }
+
+/* Atua */
+.atua-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.atua { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 2px; text-align: left; padding: 12px; border-radius: var(--radius); border: 1px solid var(--line-strong); background: var(--surface); cursor: pointer; color: var(--ink); }
+.atua:hover { border-color: var(--accent); }
+.atua[aria-checked="true"] { border: 2px solid var(--accent); background: var(--accent-soft); padding: 11px; }
+.atua-icon { width: 34px; height: 34px; margin-bottom: 6px; color: var(--accent); }
+.atua-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.atua-name { font-family: var(--font-head); font-weight: 600; font-size: 1rem; line-height: 1.2; }
+/* Last resort for narrow boxes: a word that still can't fit wraps inside its box instead of spilling out. */
+.atua-name, .atua-domain, .atua-traits, .lk span, .gb span, .rb-word, .scols span, .chip, .tab-sub, .who-tag { overflow-wrap: anywhere; }
+.atua-domain { font-size: .8rem; color: var(--accent-strong); font-weight: 600; }
+.atua-traits { font-size: .82rem; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+
+/* Happiness */
+.gauges { display: grid; gap: 18px; }
+.gauge { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 18px; align-items: start; padding-top: 16px; border-top: 1px solid var(--line); }
+.gauge:first-child { border-top: 0; padding-top: 0; }
+.gauge-svg { width: 100%; max-width: 190px; height: auto; }
+.gauge-svg .seg { cursor: pointer; }
+.gauge-svg .seg.dim { opacity: .25; }
+.gauge-svg .g1 { fill: var(--g1); } .gauge-svg .g2 { fill: var(--g2); } .gauge-svg .g3 { fill: var(--g3); } .gauge-svg .g4 { fill: var(--g4); } .gauge-svg .g5 { fill: var(--g5); }
+.gauge-svg .needle { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; }
+.gauge-svg .hub { fill: var(--ink); }
+.gauge-body { display: grid; gap: 10px; min-width: 0; }
+.gb { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 6px 2px; border: 0; border-radius: 11px; background: transparent; font-size: .74rem; line-height: 1.15; cursor: pointer; color: var(--muted); }
+.gb:hover { background: var(--surface-2); color: var(--ink); }
+.gb svg { width: 24px; height: 24px; }
+.gb[aria-checked="true"] { font-weight: 700; color: var(--ink); }
+.gb.g1[aria-checked="true"] { background: color-mix(in srgb, var(--g1) 25%, var(--surface)); }
+.gb.g2[aria-checked="true"] { background: color-mix(in srgb, var(--g2) 25%, var(--surface)); }
+.gb.g3[aria-checked="true"] { background: color-mix(in srgb, var(--g3) 28%, var(--surface)); }
+.gb.g4[aria-checked="true"] { background: color-mix(in srgb, var(--g4) 28%, var(--surface)); }
+.gb.g5[aria-checked="true"] { background: color-mix(in srgb, var(--g5) 28%, var(--surface)); }
+.feel .gb { min-height: 66px; justify-content: center; font-size: .8rem; }
+.feel .gb svg { width: 30px; height: 30px; }
+
+/* Three voices */
+.tri-list { display: grid; gap: 16px; }
+.tri-head { display: flex; justify-content: space-between; align-items: start; gap: 12px; flex-wrap: wrap; }
+.tri-head h3 { font-size: 1.2rem; font-weight: 700; line-height: 1.25; }
+.tri-rows { display: grid; gap: 8px; }
+.tri-row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 10px; align-items: center; }
+.who { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: .9rem; }
+.pin { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; font: 700 .7rem/1 var(--font); text-align: center; flex: none; color: var(--on-who); }
+.pin-akonga { background: var(--who-a); }
+.pin-whanau { background: var(--who-w); }
+.pin-kaiako { background: var(--who-k); }
+.status { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600; white-space: nowrap; }
+.status.lean { background: var(--c); color: var(--ci); }
+.status.differ { background: var(--flag-soft); color: var(--flag); }
+.status.few { background: var(--line); color: var(--muted); }
+details.more { border-top: 1px dashed var(--line-strong); padding-top: 12px; }
+details.more summary { cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--accent-strong); }
+details.more[open] summary { margin-bottom: 12px; }
+details.more .field { margin-top: 12px; }
+
+/* Summary */
+.notice { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; border-radius: var(--radius); background: var(--note-bg); border: 2px solid var(--note-line); color: var(--note-ink); }
+.notice p { max-width: 70ch; }
+.hero { grid-template-columns: auto minmax(0, 1fr); gap: 32px; align-items: center; padding: 28px; }
+.eyebrow { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-strong); font-weight: 700; }
+.hero-name { font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.05; font-weight: 600; letter-spacing: -.02em; margin-top: 4px; }
+.hero-meta { color: var(--muted); margin-top: 6px; }
+.hero-say { margin-top: 4px; font-size: .95rem; }
+.contrib { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin-top: 12px; font-size: .9rem; }
+.contrib-item { display: inline-flex; align-items: center; gap: 8px; }
+.atua-trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin-top: 16px; }
+.atua-badge { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; padding: 10px 12px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); }
+.atua-badge .atua-icon { grid-row: auto; width: 30px; height: 30px; }
+.atua-badge b { display: block; }
+.atua-badge .who-tag { font-size: .74rem; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.atua-badge .why { display: block; font-size: .84rem; color: var(--muted); font-style: italic; margin-top: 2px; }
+.progress-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.pstep { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); font-size: .82rem; cursor: pointer; color: var(--ink-2); }
+.pstep.done { background: var(--accent-soft); border-color: transparent; color: var(--accent-strong); font-weight: 600; }
+.pstep.done::before { content: "\2713"; }
+.pstep.todo::before { content: ""; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--muted); }
+.sum-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.kv { display: grid; gap: 4px; align-content: start; }
+.kv > span:first-child { font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.kv p { white-space: pre-wrap; }
+.stack { display: grid; gap: 14px; }
+.appendix-start { padding-top: 20px; border-top: 2px dashed var(--line-strong); }
+.qa { margin: 0; display: grid; }
+.qa-row { display: grid; grid-template-columns: minmax(10rem, 32%) minmax(0, 1fr); gap: 4px 16px; padding-block: 7px; border-top: 1px solid var(--line); }
+.qa-row:first-child { border-top: 0; padding-top: 0; }
+.qa dt { font-weight: 600; font-size: .9rem; color: var(--ink-2); }
+.qa dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ftable th, .ftable td { text-align: left; white-space: normal; vertical-align: top; }
+.ftable .rate-line { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.cell-note { margin-top: 4px; color: var(--muted); font-size: .84rem; }
+.yellow-box { padding: 16px 20px; border-radius: var(--radius); background: var(--note-bg); border: 2px solid var(--note-line); }
+.yellow-box .kv > span:first-child { color: var(--note-ink); }
+
+.schart { display: grid; gap: 6px; }
+.srow { display: grid; grid-template-columns: 12.5rem minmax(0, 1fr); gap: 12px; align-items: center; }
+.srow-label { display: grid; gap: 3px; justify-items: start; }
+.srow-name { font-weight: 600; font-size: .95rem; }
+.srow-label .status { font-size: .72rem; padding: 2px 8px; }
+.scols { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); font-size: .72rem; color: var(--muted); text-align: center; line-height: 1.2; }
+.strack { display: grid; gap: 2px; padding: 5px 0; border-radius: var(--radius-sm); background: linear-gradient(to right,
+  color-mix(in srgb, var(--s2) 16%, var(--surface)) 0 20%, color-mix(in srgb, var(--s1) 26%, var(--surface)) 20% 40%,
+  color-mix(in srgb, var(--s0) 24%, var(--surface)) 40% 60%, color-mix(in srgb, var(--a1) 26%, var(--surface)) 60% 80%,
+  color-mix(in srgb, var(--a2) 14%, var(--surface)) 80% 100%); }
+.lane { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); justify-items: center; align-items: center; height: 19px; }
+.lane .pin { grid-row: 1; width: 19px; height: 19px; font-size: .64rem; box-shadow: 0 0 0 2px var(--surface); }
+.chart-key { display: flex; flex-wrap: wrap; gap: 14px; font-size: .85rem; color: var(--muted); align-items: center; }
+.chart-key > span { display: inline-flex; gap: 6px; align-items: center; }
+.talk { display: grid; gap: 8px; padding: 14px 16px; border-radius: var(--radius); background: var(--flag-soft); }
+.talk h4 { color: var(--flag); margin: 0; }
+.talk ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; font-size: .92rem; }
+
+.ideas { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.idea-group { display: grid; gap: 8px; align-content: start; padding: 14px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); }
+.idea-group h4 { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0; }
+.idea-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.idea-group li { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .9rem; }
+.added { font-size: .78rem; color: var(--accent-strong); font-weight: 700; white-space: nowrap; }
+
+/* Poutama */
+.chart-scroll { overflow-x: auto; }
+.poutama { display: block; width: 100%; height: auto; }
+.pg-grid { stroke: var(--line); stroke-width: 1; }
+.pg-base { stroke: var(--ink); stroke-width: 1.5; }
+.pg-ylab, .pg-xlab2 { fill: var(--muted); font: 500 11px var(--font); }
+.pg-xlab { fill: var(--ink); font: 700 12px var(--font); }
+.pg-val { fill: var(--ink); font: 600 13px var(--font-head); }
+.pg-pat-bg { fill: var(--accent-soft); }
+.pg-pat-line { stroke: var(--accent); stroke-opacity: .22; stroke-width: 1.4; }
+.pg-step { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linejoin: miter; }
+.pg-last { fill: var(--sun); }
+.levels { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .82rem; color: var(--muted); }
+.levels b { color: var(--ink); }
+.levels.rb-key { display: none; }
+.table-scroll { overflow-x: auto; }
+.rtable { border-collapse: separate; border-spacing: 0; width: 100%; font-size: .88rem; font-variant-numeric: tabular-nums; }
+.rtable th, .rtable td { padding: 9px 10px; text-align: center; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.rtable th:first-child, .rtable td:first-child { text-align: left; white-space: normal; min-width: 11rem; }
+.rtable thead th { background: var(--surface-2); font-size: .8rem; color: var(--muted); font-weight: 600; }
+.rtable.htable td, .rtable.htable thead th { text-align: left; }
+.htable th .status { margin-left: 6px; font-size: .7rem; padding: 2px 8px; }
+.hl { font-size: .84rem; }
+.lvl { display: inline-grid; place-items: center; min-width: 30px; padding: 3px 6px; border-radius: var(--radius-sm); font-weight: 700; background: var(--line); }
+.lvl.l1 { background: color-mix(in srgb, var(--g1) 25%, var(--surface)); }
+.lvl.l2 { background: color-mix(in srgb, var(--g2) 25%, var(--surface)); }
+.lvl.l3 { background: color-mix(in srgb, var(--g3) 30%, var(--surface)); }
+.lvl.l4 { background: color-mix(in srgb, var(--g4) 30%, var(--surface)); }
+.lvl.l5 { background: color-mix(in srgb, var(--g5) 30%, var(--surface)); }
+.cell { display: inline-block; min-width: 4.6rem; padding: 3px 6px; border-radius: var(--radius-sm); background: var(--c); color: var(--ci); font-weight: 600; font-size: .78rem; }
+.rate-row { display: grid; grid-template-columns: minmax(10rem, 16rem) minmax(0, 1fr); gap: 12px; align-items: center; padding-block: 10px; border-top: 1px solid var(--line); }
+.rb { padding: 6px 2px; border: 0; border-radius: 11px; background: transparent; font-size: .78rem; line-height: 1.15; cursor: pointer; color: var(--muted); display: grid; gap: 1px; }
+.rb:hover { background: var(--surface-2); color: var(--ink); }
+.rb b { font-family: var(--font-head); font-size: 1rem; }
+.rb[aria-checked="true"] { color: var(--ink); font-weight: 700; }
+.rb.l1[aria-checked="true"] { background: color-mix(in srgb, var(--g1) 25%, var(--surface)); }
+.rb.l2[aria-checked="true"] { background: color-mix(in srgb, var(--g2) 25%, var(--surface)); }
+.rb.l3[aria-checked="true"] { background: color-mix(in srgb, var(--g3) 30%, var(--surface)); }
+.rb.l4[aria-checked="true"] { background: color-mix(in srgb, var(--g4) 30%, var(--surface)); }
+.rb.l5[aria-checked="true"] { background: color-mix(in srgb, var(--g5) 30%, var(--surface)); }
+.review-meta { display: flex; flex-wrap: wrap; gap: 12px; }
+.review-meta .field { width: 9rem; }
+.rlist { display: grid; gap: 10px; }
+.ritem { display: grid; gap: 6px; padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface-2); }
+.ritem-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center; }
+.ritem-head b { font-size: 1.05rem; }
+.ritem p { white-space: pre-wrap; font-size: .92rem; }
+.empty { padding: 24px; border: 2px dashed var(--line-strong); border-radius: var(--radius); text-align: center; color: var(--muted); display: grid; gap: 6px; justify-items: center; }
+.danger { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; padding-block: 6px; }
+
+/* Footer, toast */
+.foot { padding-block: 8px 40px; color: var(--muted); font-size: .88rem; display: grid; gap: 12px; text-align: center; }
+.foot details { text-align: left; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 20px; }
+.foot summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+.foot .about { display: grid; gap: 10px; margin-top: 10px; max-width: 75ch; color: var(--ink-2); }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 20; max-width: min(92vw, 34rem); padding: 12px 16px; border-radius: var(--radius); background: var(--ink); color: var(--surface); box-shadow: var(--shadow-lg); font-size: .92rem; }
+
+@media screen and (max-width: 760px) {
+  .grid-2, .sum-grid, .fields { grid-template-columns: minmax(0, 1fr); }
+  .feel, .rate-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .srow { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .srow-label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .srow-head > div:first-child { display: none; }
+  .mini { display: none; }
+  .hero { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; padding: 20px; }
+  .hero .contrib, .hero .atua-trio { justify-content: center; text-align: left; }
+  .av-lg { width: 128px; height: 128px; }
+}
+@media screen and (max-width: 640px) {
+  .brand-card { flex-direction: column; text-align: center; gap: 10px; padding: 18px 16px; }
+  .brand-img { height: 72px; }
+  .brand-mark { width: 60px; height: 60px; }
+  .brand-text h1 { font-size: 1.6rem; }
+  .brand-sub { font-size: .95rem; }
+  .whakatauki { font-size: .92rem; }
+  .toolbar-card { padding: 14px 16px; }
+  .learner-pick { width: 100%; }
+  .learner-pick select { flex: 1; max-width: none; }
+}
+@media screen and (max-width: 560px) {
+  .who-grid { grid-template-columns: minmax(0, 1fr); }
+  .tri-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .qa-row { grid-template-columns: minmax(0, 1fr); }
+  .gauge { grid-template-columns: minmax(0, 1fr); }
+  .gauge-svg { max-width: 160px; }
+  .card { padding: 18px 16px; }
+  .lk { font-size: .7rem; padding: 6px 2px; }
+  .rb-word { font-size: .6rem; letter-spacing: -.01em; }
+  .lk svg { width: 26px; height: 26px; }
+  .gb, .feel .gb { font-size: .66rem; }
+  .phead h2 { font-size: 1.6rem; }
+  .scale-legend { font-size: .64rem; }
+  .scale-legend span { padding: 6px 1px; }
+  .chips { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 12px; }
+  .chip { gap: 8px; font-size: .9rem; }
+  .chip::before { width: 22px; height: 22px; }
+  .atua-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .atua { padding: 10px; }
+  .atua[aria-checked="true"] { padding: 9px; }
+  .atua-icon { width: 30px; height: 30px; margin-bottom: 4px; }
+  .atua-name { font-size: .9rem; }
+  .atua-traits { font-size: .76rem; }
+}
+@media screen and (max-width: 360px) {
+  .chips { grid-template-columns: minmax(0, 1fr); }
+  .lk { font-size: .64rem; }
+  .gb, .feel .gb { font-size: .6rem; }
+  .atua-grid { grid-template-columns: minmax(0, 1fr); }
+  .atua { grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; }
+  .atua-icon { grid-row: span 3; margin-bottom: 0; }
+  .rb-word { display: none; }
+  .rb { padding-block: 10px; }
+  .levels.rb-key { display: flex; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chip::before, .lk, .atua, .gb, .rb, .tab, .btn { transition: background-color .15s, border-color .15s, color .15s; }
+}
+.print-only { display: none; }
+/* Print: A4, desktop layout at a smaller type size, whole sections kept together, page numbers in the margin. */
+@page {
+  size: A4;
+  margin: 12mm 12mm 14mm;
+  @bottom-left { content: "Rongo mā Tāne Individual Sensory Profile"; font: 8pt "Open Sans", sans-serif; color: #475569; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 8pt "Open Sans", sans-serif; color: #475569; }
+}
+@media print {
+  html { font-size: 11px; }
+  body { background: var(--surface); }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .toolbar-card, .tabbar, .no-print, .toast, .foot, .notice, button, .photo-actions, textarea { display: none !important; }
+  .print-text, .print-only { display: block !important; }
+  .wrap { max-width: none; padding-left: 0; padding-right: 0; }
+  .masthead { padding-block: 0 10px; }
+  .brand-card { box-shadow: none; padding: 8px 14px; gap: 14px; }
+  .brand-img { height: 50px; }
+  .brand-mark { width: 44px; height: 44px; }
+  .brand-text h1 { font-size: 1.5rem; }
+  .whakatauki { margin-top: 4px; }
+  #panel { display: block; padding-block: 0; }
+  #panel > * + * { margin-top: 8px; }
+  .card { box-shadow: none; border: 1px solid var(--line-strong); padding: 12px 14px; gap: 8px; break-inside: avoid; }
+  .card > h3 { font-size: 1.15rem; break-after: avoid; }
+  .sum-grid { gap: 8px 12px; break-inside: avoid; }
+  .kv { gap: 2px; }
+  .rtable th, .rtable td { padding: 5px 8px; }
+  .srow, .kv, tr, .atua-badge, .talk, .yellow-box { break-inside: avoid; }
+  .hero { padding: 14px 18px; gap: 20px; }
+  .av-lg { width: 92px; height: 92px; font-size: 2.2rem; box-shadow: 0 0 0 3px var(--accent-ring); }
+  .hero-name { font-size: 2.2rem; }
+  .atua-trio { margin-top: 10px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lane { height: 17px; }
+  .lane .pin { width: 17px; height: 17px; }
+  .print-only.hint { margin-top: 10px; }
+  .appendix-start { break-before: page; border-top: 0; padding-top: 0; }
+  .card.flow { break-inside: auto; border: 0; border-radius: 0; padding: 4px 0 0; background: none; }
+  .card.flow > h3 { padding-bottom: 6px; border-bottom: 2px solid var(--line-strong); }
+  #panel > .card.flow + .card.flow { margin-top: 18px; }
+  .qa-row, .ftable tr { break-inside: avoid; }
+  thead { display: table-header-group; }
+}
+body.export { padding-block: 24px; }
+body.export button, body.export input, body.export textarea, body.export select, body.export .photo-actions, body.export .no-export { display: none !important; }
+body.export .print-text { display: block; }
+</style>
+
+<header class="wrap masthead">
+  <div class="brand-card">
+    <img class="brand-img" id="brand-img" src="https://i.imgur.com/S17hbuh.png" alt="">
+    <svg class="brand-mark" id="brand-mark" viewBox="0 0 44 44" aria-hidden="true" hidden>
+      <path class="bm-fill" d="M4 40h36V4h-9v9h-9v9h-9v9H4z"/>
+      <path class="bm-step" d="M4 40v-9h9v-9h9v-9h9V4h9"/>
+      <rect class="bm-cap" x="31" y="2.5" width="9" height="3"/>
+    </svg>
+    <div class="brand-text">
+      <h1>Rongo mā Tāne</h1>
+      <p class="brand-sub">Individual Sensory Profile</p>
+      <p class="whakatauki"><span lang="mi">“He toka tū moana, he akinga nā ngā tai”</span><span class="trans">A rock standing firm in the sea, lashed by the tides · Te Ara Whakamana</span></p>
+    </div>
+  </div>
+  <div class="toolbar-card">
+    <div class="toolbar-row">
+      <label class="learner-pick" for="learner-select"><span>Learner</span><select id="learner-select"></select></label>
+      <div class="actions">
+        <button type="button" class="btn" data-action="new">New profile</button>
+        <button type="button" class="btn" data-action="open-file">Open file</button>
+        <input type="file" id="open-file" accept=".json,application/json" class="sr-only" tabindex="-1" aria-hidden="true">
+        <button type="button" class="btn" data-action="save-file">Save file</button>
+        <button type="button" class="btn" data-action="print-full" id="print-full-btn">Print full profile</button>
+        <button type="button" class="btn btn-primary" data-action="print" id="print-btn">Print summary</button>
+      </div>
+    </div>
+    <div class="drive" id="drive" hidden></div>
+    <span class="saved" id="saved" aria-live="polite"></span>
+  </div>
+</header>
+
+<nav class="tabbar" aria-label="Profile sections">
+  <div class="wrap">
+    <div class="tabbar-in">
+      <div class="mini" id="mini"></div>
+      <div class="tabs" role="tablist" id="tabs"></div>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="panel" role="tabpanel" aria-live="off"></main>
+
+<footer class="wrap foot">
+  <details>
+    <summary>About this profile</summary>
+    <div class="about">
+      <p>The Rongo mā Tāne (peace, peaceful actions and productivity) segment of Te Ara Whakamana builds an individual profile that helps ākonga and their whānau share their sensory experiences. It gives kaiako and kaiāwhina insight into how sensory experiences connect with wellbeing and behaviour. Read it alongside the learner's Mana Plan.</p>
+      <p>We are all unique learners on a spectrum of difference. Adapting teaching to meet each learner's needs and strengths should be the norm, not the exception.</p>
+      <p><b>Seeks and avoids.</b> Hyposensitive learners tend to seek out stimulation, or may not notice it. Hypersensitive learners tend to avoid it, because it feels like too much. Most of us sit somewhere in between, and it changes with the setting and the day.</p>
+      <p><b>The whakataukī.</b> <i lang="mi">He toka tū moana, he akinga nā ngā tai.</i> Ryan Meachen (Ngāti Te Wehi, Ngāti Huia) describes it as being the author of your own story: standing firm in who you are and living in line with your mauri.</p>
+      <p><b>Not a diagnostic tool.</b> This profile shows strengths, needs and practical strategies. It does not sort learners into diagnostic categories. Where a formal assessment would help, this profile can support that pathway.</p>
+      <p><b>Where your information is kept.</b> Profiles are saved in this browser on this device. Nothing leaves the device unless you choose to: <b>Save file</b> makes a copy you can pass on, and <b>Sync with Drive</b> (when you are signed in with Google) keeps a copy in the Drive folder you choose. Opening a file, or syncing, merges in whichever sections are newer, so nobody's work is overwritten.</p>
+    </div>
+  </details>
+  <p>Rongo mā Tāne Individual Sensory Profile · Te Ara Whakamana · Version 4, building on version 3 by Daelan Karangaroa</p>
+</footer>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Content ---------- */
+  var DOMAINS = [
+    { key: 'light', name: 'Light', detail: 'Brightness, glare, flicker and screens', child: 'Bright lights',
+      types: ['Bright sunlight', 'Overhead or fluorescent lights', 'Flickering lights', 'Screens', 'Glare off whiteboards', 'Dim light'],
+      avoid: ['Seat away from windows and glare', 'Use lamps or daylight instead of harsh overhead lights', 'Allow a cap or tinted glasses', 'Turn screen brightness down'],
+      seek: ['Seat near natural light', 'Use light tables, torches or light-up tools in learning', 'Offer visual fidget tools'] },
+    { key: 'sound', name: 'Sound', detail: 'Noise level and types of noise', child: 'Loud or busy sounds',
+      types: ['Sudden loud noises', 'Background chatter', 'Bells and alarms', 'Hand dryers', 'Echoey spaces (hall, gym, wharekai)', 'Humming (heaters, projectors)', 'Music', 'Singing or haka'],
+      avoid: ['Offer ear muffs or noise-reducing headphones', 'Give a warning before bells, alarms and drills', 'Agree on a quiet space they can go to', 'Use visual signals for transitions'],
+      seek: ['Allow music through headphones during independent work', 'Build in waiata, drumming and rhythm', 'Give a speaking or leading role'] },
+    { key: 'temperature', name: 'Temperature', detail: 'Heat, cold and changes in temperature', child: 'Feeling hot or cold',
+      types: ['Hot rooms', 'Cold rooms', 'Wind', 'Going between inside and outside', 'Heaters or heat pumps'],
+      avoid: ['Let them choose a seat away from heaters, doors and windows', 'Allow layers to be added or taken off', 'Keep a water bottle handy'],
+      seek: ['Check they are dressed for the weather, as they may not notice the cold', 'Remind them about jackets and sunhats', 'Offer a cool drink or a warm layer when they look flushed or chilled'] },
+    { key: 'touch', name: 'Touch and textures', detail: 'Tactility: textures, physical sensations, being touched', child: 'Touching new or messy things',
+      types: ['Messy hands (glue, paint, sand)', 'Clothing tags and seams', 'Light touch', 'Firm touch or hugs', 'Being bumped in lines', 'Wet or sticky things', 'Hats or hair brushing'],
+      avoid: ['Ask before touching', 'Offer tools or gloves for messy activities', 'Let them stand at the front or back of lines', 'Allow soft clothing with tags removed'],
+      seek: ['Offer fidget tools and textured objects', 'Use hands-on learning (clay, sand, harakeke)', 'Try a weighted lap pad or firm-pressure activities'] },
+    { key: 'taste', name: 'Taste and food textures', detail: 'Flavours and textures in the mouth', child: 'Trying new foods',
+      types: ['Crunchy', 'Soft or mushy', 'Mixed textures', 'Strong flavours', 'Spicy', 'New foods', 'Very hot or cold food'],
+      avoid: ['Never pressure them to try kai', 'Let them bring familiar kai', 'Tell them ahead of time about kai at hui and events'],
+      seek: ['Offer crunchy or chewy snacks at break', 'Provide a chew tool if they mouth objects', 'Include tasting in learning, such as cooking'] },
+    { key: 'smell', name: 'Smell', detail: 'Scents and odours', child: 'Strong smells',
+      types: ['Food cooking', 'Perfume and deodorant', 'Cleaning products', 'Toilets and bins', 'Paint and glue', 'Plants and outdoors'],
+      avoid: ['Avoid strong cleaning sprays and air fresheners nearby', 'Seat away from bins, kitchens and toilets', 'Let them step outside during smelly activities'],
+      seek: ['Use scented playdough or calming scents', 'Include smell in learning, such as gardening or cooking'] },
+    { key: 'colour', name: 'Colour and busy spaces', detail: 'Colour, pattern and visual clutter', child: 'Bright colours and busy walls',
+      types: ['Bright colours', 'Busy or patterned walls', 'Particular colours', 'Clutter', 'Moving pictures or screens'],
+      avoid: ['Keep the wall near their seat clear and calm', 'Use muted, natural colours', 'Give a workspace with fewer things to look at'],
+      seek: ['Colour-code tasks and timetables', 'Use bright visual supports'] },
+    { key: 'movement', name: 'Movement and heavy work', detail: 'Kinaesthetics and proprioception: body position, stimming, heavy work', child: 'Running, jumping, pushing and carrying',
+      types: ['Jumping', 'Crashing or rough play', 'Pushing and pulling', 'Carrying heavy things', 'Sitting still for a long time', 'Stimming (flapping, rocking, fidgeting)', 'Chewing'],
+      avoid: ['Give notice before PE and movement activities', 'Let them watch first before joining in', 'Offer a steady, supportive seat'],
+      seek: ['Schedule regular movement breaks', 'Give heavy-work jobs (carrying books, stacking chairs)', 'Offer a wobble cushion or standing desk', 'Include kapa haka, dance or exercise'] },
+    { key: 'balance', name: 'Balance and motion', detail: 'Vestibular sense: spinning, swinging, feet off the ground (suggested addition)', child: 'Spinning, swinging and climbing',
+      types: ['Spinning', 'Swinging', 'Climbing', 'Being upside down', 'Uneven ground', 'Bus or car trips'],
+      avoid: ['Offer activities that keep both feet on the ground', 'Prepare them for trips and changes to the playground', 'Allow a slower pace on stairs and equipment'],
+      seek: ['Plan swing, spin or climbing time before focused work', 'Offer a rocking or wobble seat', 'Use active games in learning'] },
+    { key: 'body', name: 'Body signals', detail: 'Interoception: hunger, thirst, toileting, tiredness, pain, emotions', child: 'Body feelings (hungry, thirsty, tired, needing the toilet)',
+      words: { '2': 'Often misses signals', '1': 'Misses some signals', '0': 'Just right', '-1': 'Feels signals strongly', '-2': 'Too much to cope with' },
+      types: ['Hunger', 'Thirst', 'Needing the toilet', 'Tiredness', 'Pain or injury', 'Feeling hot or cold inside', 'Heartbeat or breathing', 'Naming emotions'],
+      avoid: ['Help name body feelings calmly and without fuss', 'Teach a calming breathing routine', 'Allow toilet and water breaks without asking'],
+      seek: ['Use reminders for water, kai and the toilet', 'Do regular body check-ins (an Atua check-in works well)', 'Put drink and toilet breaks on the visual timetable'] }
+  ];
+  var DOMAIN = {}; DOMAINS.forEach(function (d) { DOMAIN[d.key] = d; });
+
+  var ATUA = [
+    { key: 'ranginui', name: 'Ranginui', domain: 'The sky', traits: 'Watches over everyone, sees the big picture, protective' },
+    { key: 'papatuanuku', name: 'Papatūānuku', domain: 'The earth', traits: 'Caring, nurturing, grounded, looks after others' },
+    { key: 'tane', name: 'Tāne Mahuta', domain: 'Forests and birds', traits: 'Strong, curious, a seeker of knowledge' },
+    { key: 'tangaroa', name: 'Tangaroa', domain: 'The sea', traits: 'Calm and deep, powerful when needed, loves the water' },
+    { key: 'tawhirimatea', name: 'Tāwhirimātea', domain: 'Wind and weather', traits: 'Full of energy and big feelings, always on the move' },
+    { key: 'tumatauenga', name: 'Tūmatauenga', domain: 'People and courage', traits: 'Brave, determined, never gives up' },
+    { key: 'rongo', name: 'Rongo', domain: 'Peace and cultivated kai', traits: 'Peaceful, patient, a helper and a grower' },
+    { key: 'haumia', name: 'Haumia-tiketike', domain: 'Wild kai and fern root', traits: 'Quiet, independent, resourceful' },
+    { key: 'ruaumoko', name: 'Rūaumoko', domain: 'Earthquakes and volcanoes', traits: 'Huge energy inside, strong and powerful' },
+    { key: 'mahuika', name: 'Mahuika', domain: 'Fire', traits: 'Warm, bright and fiery, shares the gift of fire' },
+    { key: 'hineteiwaiwa', name: 'Hineteiwaiwa', domain: 'Weaving and the arts', traits: 'Creative, patient, brings people together' },
+    { key: 'other', name: 'Another Atua', domain: 'Your own choice', traits: 'Choose an Atua from the kōrero of your iwi or hapū' }
+  ];
+  var ATUA_BY = {}; ATUA.forEach(function (a) { ATUA_BY[a.key] = a; });
+  var ATUA_ICONS = {
+    ranginui: '<path d="M5 31a15 15 0 0 1 30 0"/><path d="M3 31h34"/><circle cx="11" cy="11" r="1.4"/><circle cx="29" cy="9" r="1.4"/><circle cx="20" cy="5.5" r="1.2"/>',
+    papatuanuku: '<path d="M3 30c5-8 9-8 13-3s8 5 12-2 6-5 9-2"/><path d="M3 35h34"/>',
+    tane: '<path d="M20 36V25"/><path d="M20 4l-9 11h5l-7 10h22l-7-10h5z"/>',
+    tangaroa: '<path d="M4 14c4-4 8-4 12 0s8 4 12 0 6-3 8-2"/><path d="M4 22c4-4 8-4 12 0s8 4 12 0 6-3 8-2"/><path d="M4 30c4-4 8-4 12 0s8 4 12 0 6-3 8-2"/>',
+    tawhirimatea: '<path d="M4 14h19a5 5 0 1 0-5-5"/><path d="M4 21h27a5 5 0 1 1-5 5"/><path d="M4 28h11"/>',
+    tumatauenga: '<path d="M8 21l12-10 12 10"/><path d="M8 31l12-10 12 10"/>',
+    rongo: '<path d="M20 36V17"/><path d="M20 23c-8 0-11-6-11-11 6 0 11 4 11 11z"/><path d="M20 18c0-7 5-11 11-11 0 6-4 11-11 11z"/>',
+    haumia: '<path d="M14 36c0-12 2-21 11-22a6 6 0 1 1-1 11 3 3 0 1 1 2-5"/>',
+    ruaumoko: '<path d="M4 35l11-19h10l11 19z"/><path d="M17 12c0-3 3-3 3-6M23 12c0-3 3-3 3-6"/>',
+    mahuika: '<path d="M20 36c-7 0-11-5-11-11 0-7 6-10 7-17 4 4 5 8 4 12 2-1 4-3 4-6 4 4 7 7 7 11 0 6-4 11-11 11z"/>',
+    hineteiwaiwa: '<path d="M6 6l28 28M6 20l14 14M20 6l14 14M34 6L6 34M20 6L6 20M34 20L20 34"/>',
+    other: '<circle cx="20" cy="20" r="14"/><path d="M20 13v14M13 20h14"/>'
+  };
+
+  var LOVES = ['Waiata', 'Kapa haka', 'Sport', 'Playing games', 'Drawing', 'Building', 'Reading', 'Music', 'Dancing', 'Being outside', 'Animals', 'Cooking', 'Making things', 'Swimming', 'Storytelling', 'Devices and computers', 'Helping others'];
+  var CLASSROOM = ['Quiet', 'A little background noise', 'Music playing', 'Natural daylight', 'Soft or dim light', 'Cool', 'Warm', 'Calm colours', 'Bright colours', 'Clear, tidy walls', 'Lots to look at', 'Plenty of space', 'A cosy corner', 'Working outside', 'Near the door', 'Near the front', 'Next to a friend', 'Beanbag or soft seat', 'Standing desk', 'Wobble cushion', 'Adjustable chair and table', 'A small space or under a table'];
+  var LEARN = ['Someone showing me', 'Hands-on', 'Written instructions', 'Pictures and diagrams', 'Spoken instructions', 'Signed (NZSL)', 'One step at a time', 'Working on my own', 'With a friend', 'Small group', 'Whole class', 'Te reo Māori', 'Stories', 'Movement breaks', 'Fidget tools', 'Ear muffs or headphones', 'Special glasses', 'Hearing aids', 'Comfortable clothes', 'Shoes or socks off', 'Hoodie or hat', 'Extra time'];
+  var DAY = ['Karakia', 'Waiata', 'Whakataukī', 'Atua check-in', 'Exercise', 'Games', 'Playing with friends', 'Saying hello or goodbye', 'Breathing exercises', 'Yoga or stretching', 'Walking', 'Talking with people', 'Music', 'Dancing', 'Storytelling', 'Eating', 'Drinking'];
+  var BREAKS = ['Same as everybody else', 'I need more breaks'];
+  var REO = ['Karakia to start the day', 'Karakia before kai', 'Waiata', 'Whakataukī', 'Instructions in te reo Māori', 'Bilingual instructions', 'Pepeha or mihi', 'Kapa haka'];
+  var CARE = ['Head is tapu: do not touch', 'Do not pass things over the head', 'No sitting on tables used for kai'];
+  var TOUCH = ['Ask first', 'Light touch is OK', 'Prefers no touch'];
+  var EYE = ['Comfortable with eye contact', 'Do not require eye contact', 'Looking down can be a sign of respect'];
+  var SPACE = ['Close is OK', "Arm's length", 'Needs plenty of space'];
+  var DECIDE = ['Whānau-centred decisions', 'Ākonga leads with whānau support', 'Ākonga decides'];
+  var CLOTHING = ['Socks only or shoes off', 'Inside-out clothing', 'Tags removed', 'Soft fabrics only', 'Hoodie or hat', 'Same clothes each day', 'Compression clothing', 'Layers to add or remove'];
+  var HAPPY = [
+    { key: 'environment', label: 'Happiness with the school environment and culture' },
+    { key: 'learning', label: 'Happiness with learning and learning outcomes' },
+    { key: 'relationships', label: 'Happiness with relationships with teachers and support people' }
+  ];
+  var HAPPY_LABEL = { 1: 'Very unhappy', 2: 'Unhappy', 3: 'Okay', 4: 'Happy', 5: 'Very happy' };
+  // Ākonga wording comes from version 3, shown with the positive answer first.
+  var AKONGA_HAPPY = [
+    { key: 'learning', label: 'School work', hi: 'Fun!', lo: 'Boring' },
+    { key: 'friends', label: 'Friends at school', hi: 'Great!', lo: 'Hard to be with' },
+    { key: 'relationships', label: 'Your teachers', hi: 'Helpful', lo: 'Hard to talk to' }
+  ];
+  var KAIAKO_HAPPY = [
+    { key: 'environment', label: 'Settled in the school environment and culture' },
+    { key: 'learning', label: 'Happy with learning' },
+    { key: 'friends', label: 'Getting on with friends and peers' },
+    { key: 'relationships', label: 'Relationships with teachers and support people' }
+  ];
+  var HAPPY_AREAS = [
+    { key: 'environment', label: 'School environment and culture' },
+    { key: 'learning', label: 'Learning' },
+    { key: 'friends', label: 'Friends and peers' },
+    { key: 'relationships', label: 'Teachers and support people' }
+  ];
+  var HAPPY_ASKED = { akonga: AKONGA_HAPPY, whanau: HAPPY, kaiako: KAIAKO_HAPPY };
+  var INDICATORS = [
+    { key: 'wellbeing', label: 'Hauora: wellbeing at kura' },
+    { key: 'regulation', label: 'Regulation: calm, settled, recovers well' },
+    { key: 'engagement', label: 'Engagement in learning' },
+    { key: 'environment', label: 'Sensory needs met in the environment' }
+  ];
+  var LEVELS = { 1: 'Struggling', 2: 'Emerging', 3: 'Developing', 4: 'Settled', 5: 'Flourishing' };
+  var TERMS = ['Term 1', 'Term 2', 'Term 3', 'Term 4', 'End of year'];
+  var TABS = [
+    { key: 'summary', label: 'Summary', sub: 'Whakarāpopototanga' },
+    { key: 'akonga', label: 'Ākonga', sub: 'Learner voice' },
+    { key: 'whanau', label: 'Whānau', sub: 'Family voice' },
+    { key: 'kaiako', label: 'Kaiako', sub: 'Kaiako · Kaiāwhina' },
+    { key: 'sensory', label: 'Sensory', sub: 'Three views' },
+    { key: 'tikanga', label: 'Tikanga', sub: 'Culture and care' },
+    { key: 'poutama', label: 'Poutama', sub: 'Term reviews' }
+  ];
+  var WHOS = ['akonga', 'whanau', 'kaiako'];
+  var WHO = { akonga: { label: 'Ākonga', short: 'Ā' }, whanau: { label: 'Whānau', short: 'W' }, kaiako: { label: 'Kaiako', short: 'K' } };
+  var SCALE = [2, 1, 0, -1, -2];
+  var LBL = {
+    child: { '2': 'Love it', '1': 'Like it', '0': 'It’s OK', '-1': 'Don’t like it', '-2': 'Really don’t like it' },
+    adult: { '2': 'Strongly seeks', '1': 'Seeks', '0': 'Just right', '-1': 'Avoids', '-2': 'Strongly avoids' }
+  };
+  var CLS = { '2': 's2', '1': 's1', '0': 's0', '-1': 'a1', '-2': 'a2' };
+  var SECTIONS = ['akonga', 'whanau', 'kaiako', 'rongo', 'tikanga', 'plan'];
+  var SECTION_NAME = { akonga: 'Ākonga', whanau: 'Whānau', kaiako: 'Kaiako', rongo: 'sensory notes', tikanga: 'Tikanga', plan: 'implications' };
+
+  /* ---------- State ---------- */
+  var STORE_KEY = 'rongo-ma-tane.v1';
+  var IS_ARTIFACT = !!(window.claude && typeof window.claude.use === 'function');
+  var downloadsP = null;
+  if (IS_ARTIFACT) { try { downloadsP = Promise.resolve(window.claude.use('downloads')).catch(function () { return null; }); } catch (e) { downloadsP = Promise.resolve(null); } }
+  var store = null;
+  var ui = { tab: 'summary', draft: null, confirm: null, open: {} };
+  var storageOk = true;
+  var lastSaved = null;
+
+  function $(s) { return document.querySelector(s); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function uid(prefix) { return prefix + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+  function P() { return store.profiles[store.current]; }
+
+  function blankProfile() {
+    var now = Date.now();
+    return {
+      id: uid('p'), created: now, updated: now,
+      akonga: { updated: 0, sensory: {}, happy: {}, loves: [], classroom: [], learn: [], prepare: [], breakActs: [], endDay: [] },
+      whanau: { updated: 0, sensory: {}, happy: {}, happyNote: {} },
+      kaiako: { updated: 0, sensory: {}, happy: {} },
+      rongo: { updated: 0, types: {}, notes: {} },
+      tikanga: { updated: 0, reo: [], care: [], clothing: [] },
+      plan: { updated: 0 },
+      reviews: []
+    };
+  }
+
+  function strArr(a) { return Array.isArray(a) ? a.filter(function (x) { return typeof x === 'string'; }) : []; }
+  function normalise(p) {
+    var b = blankProfile();
+    SECTIONS.forEach(function (s) { if (!p[s] || typeof p[s] !== 'object') p[s] = b[s]; if (typeof p[s].updated !== 'number') p[s].updated = 0; });
+    WHOS.forEach(function (w) {
+      if (!p[w].sensory || typeof p[w].sensory !== 'object') p[w].sensory = {};
+      Object.keys(p[w].sensory).forEach(function (k) { var v = p[w].sensory[k]; if (!(typeof v === 'number' && v >= -2 && v <= 2)) delete p[w].sensory[k]; });
+      if (p[w].photo && !/^data:image\/(png|jpe?g|gif|webp);base64,/.test(p[w].photo)) delete p[w].photo;
+      if (!p[w].happy || typeof p[w].happy !== 'object') p[w].happy = {};
+      Object.keys(p[w].happy).forEach(function (k) { var v = p[w].happy[k]; if (!(typeof v === 'number' && v >= 1 && v <= 5)) delete p[w].happy[k]; });
+    });
+    ['loves', 'classroom', 'learn', 'prepare', 'breakActs', 'endDay'].forEach(function (k) { p.akonga[k] = strArr(p.akonga[k]); });
+    ['reo', 'care', 'clothing'].forEach(function (k) { p.tikanga[k] = strArr(p.tikanga[k]); });
+    if (!p.whanau.happyNote || typeof p.whanau.happyNote !== 'object') p.whanau.happyNote = {};
+    if (!p.rongo.types || typeof p.rongo.types !== 'object') p.rongo.types = {};
+    if (!p.rongo.notes || typeof p.rongo.notes !== 'object') p.rongo.notes = {};
+    Object.keys(p.rongo.types).forEach(function (k) { p.rongo.types[k] = strArr(p.rongo.types[k]); });
+    if (p.drive && !(typeof p.drive === 'object' && typeof p.drive.fileId === 'string')) delete p.drive;
+    if (!Array.isArray(p.reviews)) p.reviews = [];
+    p.reviews = p.reviews.filter(function (r) { return r && typeof r === 'object' && r.id; });
+    if (!p.id) p.id = uid('p');
+    return p;
+  }
+
+  function load() {
+    var s = null;
+    try { var raw = localStorage.getItem(STORE_KEY); if (raw) s = JSON.parse(raw); } catch (e) { storageOk = false; }
+    if (!s || !s.profiles || !Array.isArray(s.order) || !s.order.length) {
+      var ex = exampleProfile();
+      s = { profiles: {}, order: [ex.id], current: ex.id, tab: 'summary' };
+      s.profiles[ex.id] = ex;
+    }
+    Object.keys(s.profiles).forEach(function (id) { normalise(s.profiles[id]); });
+    s.order = s.order.filter(function (id) { return s.profiles[id]; });
+    if (!s.order.length) { var bp = blankProfile(); s.profiles[bp.id] = bp; s.order = [bp.id]; }
+    if (!s.profiles[s.current]) s.current = s.order[0];
+    store = s;
+    ui.tab = TABS.some(function (t) { return t.key === s.tab; }) ? s.tab : 'summary';
+  }
+
+  var saveTimer = null;
+  function queueSave() { clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 350); }
+  function saveNow() {
+    clearTimeout(saveTimer);
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(store));
+      storageOk = true; lastSaved = new Date();
+    } catch (e) {
+      storageOk = false;
+      if (e && (e.name === 'QuotaExceededError' || e.code === 22)) toast('This browser’s storage is full. Save profile files, then delete profiles you no longer need here.');
+    }
+    renderSaved();
+  }
+  function touch(path) {
+    var sec = path.split('.')[0];
+    var p = P();
+    if (SECTIONS.indexOf(sec) >= 0) p[sec].updated = Date.now();
+    p.updated = Date.now();
+  }
+
+  function resolve(path) {
+    if (path.indexOf('@draft.') === 0) return { obj: ui.draft, path: path.slice(7), draft: true };
+    return { obj: P(), path: path, draft: false };
+  }
+  function getPath(o, path) { return path.split('.').reduce(function (a, k) { return a == null ? undefined : a[k]; }, o); }
+  function setPath(o, path, v) {
+    var ks = path.split('.'); var a = o;
+    for (var i = 0; i < ks.length - 1; i++) { if (a[ks[i]] == null || typeof a[ks[i]] !== 'object') a[ks[i]] = {}; a = a[ks[i]]; }
+    a[ks[ks.length - 1]] = v;
+  }
+  function val(path) { var r = resolve(path); return getPath(r.obj, r.path); }
+
+  /* ---------- Helpers ---------- */
+  function displayName(p) { return (p.tikanga.preferredName || p.akonga.name || '').trim() || 'New learner'; }
+  function initials(name) { var parts = String(name || '').trim().split(/\s+/).filter(function (w) { return /^\p{L}/u.test(w); }); if (!parts.length || name === 'New learner') return '?'; return (parts[0][0] + (parts.length > 1 ? parts[parts.length - 1][0] : '')).toUpperCase(); }
+  function avatar(photo, name, size) { return '<span class="avatar av-' + size + '">' + (photo ? '<img src="' + esc(photo) + '" alt="Photo of ' + esc(name) + '">' : esc(initials(name))) + '</span>'; }
+  function slug(s) { return String(s || 'learner').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'learner'; }
+  function todayISO() { var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  function age(b) {
+    if (!b) return ''; var d = new Date(b + 'T00:00'); if (isNaN(d)) return '';
+    var t = new Date(); var y = t.getFullYear() - d.getFullYear(); var m = t.getMonth() - d.getMonth();
+    if (m < 0 || (m === 0 && t.getDate() < d.getDate())) y--;
+    return (y >= 0 && y < 40) ? y + ' years old' : '';
+  }
+  function words(d) { return d.words || LBL.adult; }
+  function scaleLabel(who, key, v) { return who === 'akonga' ? LBL.child[v] : words(DOMAIN[key])[v]; }
+  function vals(p, key) { var o = {}; WHOS.forEach(function (w) { var v = p[w].sensory[key]; o[w] = typeof v === 'number' ? v : null; }); return o; }
+  function stats(v) {
+    var xs = WHOS.map(function (w) { return v[w]; }).filter(function (x) { return x != null; });
+    if (!xs.length) return { n: 0 };
+    var mean = xs.reduce(function (a, b) { return a + b; }, 0) / xs.length;
+    return { n: xs.length, mean: mean, spread: Math.max.apply(null, xs) - Math.min.apply(null, xs) };
+  }
+  function leanIndex(mean) { return mean >= 1.5 ? 0 : mean >= 0.5 ? 1 : mean > -0.5 ? 2 : mean > -1.5 ? 3 : 4; }
+  function statusChip(d, v) {
+    var s = stats(v);
+    if (s.n === 0) return '<span class="status few">No ratings yet</span>';
+    if (s.n >= 2 && s.spread >= 2) return '<span class="status differ">Views differ: talk together</span>';
+    var x = SCALE[leanIndex(s.mean)];
+    return '<span class="status lean ' + CLS[x] + '">' + esc(words(d)[x]) + (s.n === 1 ? ' (1 view)' : '') + '</span>';
+  }
+  function ideas(p) {
+    var out = [];
+    DOMAINS.forEach(function (d) {
+      var s = stats(vals(p, d.key)); if (!s.n) return;
+      if (s.mean <= -0.5) out.push({ d: d, side: 'avoid', tips: d.avoid });
+      else if (s.mean >= 0.5) out.push({ d: d, side: 'seek', tips: d.seek });
+    });
+    return out;
+  }
+  function happyAvg(p, who) {
+    var xs = HAPPY_ASKED[who].map(function (h) { return p[who].happy[h.key]; }).filter(function (x) { return typeof x === 'number'; });
+    return xs.length ? xs.reduce(function (a, b) { return a + b; }, 0) / xs.length : null;
+  }
+  function happyLabel(who, key, n) {
+    if (who !== 'akonga') return HAPPY_LABEL[n];
+    var q = AKONGA_HAPPY.filter(function (x) { return x.key === key; })[0];
+    return q ? { 5: q.hi, 4: 'Good', 3: 'OK', 2: 'Not great', 1: q.lo }[n] : HAPPY_LABEL[n];
+  }
+  function reviewHappy(r, who) {
+    if (r.happy && typeof r.happy[who] === 'number') return r.happy[who];
+    return who === 'whanau' && typeof r.happiness === 'number' ? r.happiness : null;
+  }
+  function overall(r) {
+    var xs = INDICATORS.map(function (i) { return r[i.key]; }).filter(function (x) { return typeof x === 'number'; });
+    return xs.length ? xs.reduce(function (a, b) { return a + b; }, 0) / xs.length : null;
+  }
+  function termIndex(t) { var i = TERMS.indexOf(t); return i < 0 ? 9 : i; }
+  function sortedReviews(p) { return p.reviews.slice().sort(function (a, b) { return (a.year - b.year) || (termIndex(a.term) - termIndex(b.term)) || ((a.created || 0) - (b.created || 0)); }); }
+  function termShort(t) { return t === 'End of year' ? 'Year end' : String(t || '').replace('Term ', 'T'); }
+  function currentTerm() { var m = new Date().getMonth(); return m <= 3 ? 'Term 1' : m <= 6 ? 'Term 2' : m <= 8 ? 'Term 3' : 'Term 4'; }
+  function snapshot(p) { var o = {}; DOMAINS.forEach(function (d) { o[d.key] = vals(p, d.key); }); return o; }
+
+  /* ---------- Small UI builders ---------- */
+  function face(v) {
+    var mouth = { '2': 'M10.5 19.5 Q16 26 21.5 19.5', '1': 'M11.5 20 Q16 23.5 20.5 20', '0': 'M11.5 21 H20.5', '-1': 'M11.5 22.5 Q16 19 20.5 22.5', '-2': 'M10.5 23.5 Q16 17 21.5 23.5' }[String(v)];
+    return '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="11.5" cy="13" r="1.8" fill="currentColor"/><circle cx="20.5" cy="13" r="1.8" fill="currentColor"/><path d="' + mouth + '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  }
+  function atuaIcon(key) { return '<svg viewBox="0 0 40 40" aria-hidden="true">' + (ATUA_ICONS[key] || ATUA_ICONS.other) + '</svg>'; }
+  function fid(path) { return 'f-' + path.replace(/[^A-Za-z0-9]+/g, '-'); }
+
+  function field(label, path, o) {
+    o = o || {};
+    var v = val(path); if (v == null) v = '';
+    var id = fid(path);
+    var lab = '<label for="' + id + '"' + (o.hideLabel ? ' class="sr-only"' : '') + '>' + esc(label) + '</label>';
+    var attrs = ' id="' + id + '" data-path="' + esc(path) + '"' + (o.live ? ' data-live="1"' : '') + (o.placeholder ? ' placeholder="' + esc(o.placeholder) + '"' : '');
+    var cls = 'field' + (o.span ? ' span-2' : '');
+    if (o.type === 'textarea') {
+      return '<div class="' + cls + '">' + lab + '<textarea rows="' + (o.rows || 3) + '"' + attrs + '>' + esc(v) + '</textarea>' + (o.print ? '<div class="print-text">' + esc(v) + '</div>' : '') + '</div>';
+    }
+    if (o.type === 'select') {
+      return '<div class="' + cls + '">' + lab + '<select' + attrs + '>' + o.options.map(function (x) { return '<option' + (x === v ? ' selected' : '') + '>' + esc(x) + '</option>'; }).join('') + '</select></div>';
+    }
+    return '<div class="' + cls + '">' + lab + '<input type="' + (o.type || 'text') + '"' + attrs + ' value="' + esc(v) + '"' + (o.list ? ' list="' + o.list + '"' : '') + (o.min ? ' min="' + o.min + '" max="' + o.max + '"' : '') + ' autocomplete="off"></div>';
+  }
+  function chips(path, list, label) {
+    var cur = val(path) || [];
+    return '<div class="chips" role="group"' + (label ? ' aria-label="' + esc(label) + '"' : '') + '>' + list.map(function (o) {
+      return '<button type="button" class="chip" aria-pressed="' + (cur.indexOf(o) >= 0) + '" data-toggle="' + esc(path) + '" data-value="' + esc(o) + '" data-k="' + esc('t:' + path + ':' + o) + '">' + esc(o) + '</button>';
+    }).join('') + '</div>';
+  }
+  function options(path, list, label) {
+    var cur = val(path);
+    return '<div class="chips" role="radiogroup"' + (label ? ' aria-label="' + esc(label) + '"' : '') + '>' + list.map(function (o) {
+      return '<button type="button" class="chip" role="radio" aria-checked="' + (cur === o) + '" data-set="' + esc(path) + '" data-value="' + esc(o) + '" data-k="' + esc('o:' + path + ':' + o) + '">' + esc(o) + '</button>';
+    }).join('') + '</div>';
+  }
+  function likert(who, key, mode) {
+    var path = who + '.sensory.' + key; var cur = val(path); var d = DOMAIN[key];
+    var labels = mode === 'child' ? LBL.child : words(d);
+    return '<div class="lk-row" role="radiogroup" aria-label="' + esc(WHO[who].label + ': ' + d.name) + '">' + SCALE.map(function (x) {
+      return '<button type="button" class="lk ' + CLS[x] + (mode === 'child' ? ' lk-face' : '') + '" role="radio" aria-checked="' + (cur === x) + '" data-set="' + path + '" data-value="' + x + '" data-num="1" data-k="' + esc('s:' + path + ':' + x) + '">' + (mode === 'child' ? face(x) : '') + '<span>' + esc(labels[x]) + '</span></button>';
+    }).join('') + '</div>';
+  }
+  function photo(sec, name) {
+    var path = sec + '.photo'; var v = val(path); var id = fid(path);
+    return '<div class="photo">' + avatar(v, name || '', 'md') + '<div class="photo-actions"><label class="btn btn-small" for="' + id + '">' + (v ? 'Change photo' : 'Add photo') + '</label><input class="sr-only" type="file" accept="image/*" id="' + id + '" data-photo="' + path + '">' + (v ? '<button type="button" class="btn btn-small btn-quiet" data-action="clear-photo" data-path="' + path + '" data-k="' + esc('cp:' + path) + '">Remove</button>' : '') + '</div></div>';
+  }
+  function atuaPicker(sec) {
+    var path = sec + '.atua'; var cur = val(path);
+    return '<div class="atua-grid" role="radiogroup" aria-label="Atua">' + ATUA.map(function (a) {
+      return '<button type="button" class="atua" role="radio" aria-checked="' + (cur === a.key) + '" data-set="' + path + '" data-value="' + a.key + '" data-k="' + esc('a:' + path + ':' + a.key) + '"><span class="atua-icon">' + atuaIcon(a.key) + '</span><span class="atua-name">' + esc(a.name) + '</span><span class="atua-domain">' + esc(a.domain) + '</span><span class="atua-traits">' + esc(a.traits) + '</span></button>';
+    }).join('') + '</div>' + (cur === 'other' ? field('Which Atua?', sec + '.atuaOther') : '') +
+      '<p class="hint">Kōrero about Atua differs between iwi and hapū. Use the stories of your own rohe.</p>';
+  }
+  function atuaName(p, who) { var k = p[who].atua; if (!k) return ''; if (k === 'other') return (p[who].atuaOther || '').trim() || 'Another Atua'; return ATUA_BY[k] ? ATUA_BY[k].name : ''; }
+  function gauge(item) {
+    var path = 'whanau.happy.' + item.key; var v = val(path);
+    var cx = 100, cy = 100, R = 88, r = 54, segs = '';
+    function pt(rad, ang) { return (cx + rad * Math.cos(ang)).toFixed(2) + ' ' + (cy - rad * Math.sin(ang)).toFixed(2); }
+    for (var i = 0; i < 5; i++) {
+      var a0 = Math.PI * (1 - i / 5), a1 = Math.PI * (1 - (i + 1) / 5);
+      segs += '<path class="seg g' + (i + 1) + (v != null && v !== i + 1 ? ' dim' : '') + '" d="M ' + pt(R, a0) + ' A ' + R + ' ' + R + ' 0 0 1 ' + pt(R, a1) + ' L ' + pt(r, a1) + ' A ' + r + ' ' + r + ' 0 0 0 ' + pt(r, a0) + ' Z" data-set="' + path + '" data-value="' + (i + 1) + '" data-num="1"><title>' + HAPPY_LABEL[i + 1] + '</title></path>';
+    }
+    var needle = '';
+    if (v) { var ang = Math.PI * (1 - (v - 0.5) / 5); needle = '<line class="needle" x1="' + cx + '" y1="' + cy + '" x2="' + (cx + 72 * Math.cos(ang)).toFixed(1) + '" y2="' + (cy - 72 * Math.sin(ang)).toFixed(1) + '"/>'; }
+    return '<div class="gauge"><svg class="gauge-svg" viewBox="0 0 200 110" role="img" aria-label="' + esc(item.label + ': ' + (v ? HAPPY_LABEL[v] : 'not chosen yet')) + '">' + segs + needle + '<circle class="hub" cx="' + cx + '" cy="' + cy + '" r="6"/></svg>' +
+      '<div class="gauge-body"><h4>' + esc(item.label) + '</h4><div class="gauge-btns" role="radiogroup" aria-label="' + esc(item.label) + '">' + [1, 2, 3, 4, 5].map(function (n) {
+        return '<button type="button" class="gb g' + n + '" role="radio" aria-checked="' + (v === n) + '" data-set="' + path + '" data-value="' + n + '" data-num="1" data-k="' + esc('g:' + path + ':' + n) + '">' + face(n - 3) + '<span>' + HAPPY_LABEL[n] + '</span></button>';
+      }).join('') + '</div>' + field('Comments', 'whanau.happyNote.' + item.key, { type: 'textarea', rows: 2 }) + '</div></div>';
+  }
+  function happyButtons(who, key, order, label) {
+    var path = who + '.happy.' + key; var cur = val(path);
+    return '<div class="gauge-btns" role="radiogroup" aria-label="' + esc(label) + '">' + order.map(function (n) {
+      return '<button type="button" class="gb g' + n + '" role="radio" aria-checked="' + (cur === n) + '" data-set="' + path + '" data-value="' + n + '" data-num="1" data-k="' + esc('h:' + path + ':' + n) + '">' + face(n - 3) + '<span>' + esc(happyLabel(who, key, n)) + '</span></button>';
+    }).join('') + '</div>';
+  }
+  function card(title, body, intro, cls) { return '<section class="card' + (cls ? ' ' + cls : '') + '">' + (title ? '<h3>' + title + '</h3>' : '') + (intro ? '<p class="card-intro">' + intro + '</p>' : '') + body + '</section>'; }
+  function head(title, sub, lead, who) {
+    return '<div class="phead"><div class="phead-title"><h2>' + title + '</h2><span class="phead-sub">' + sub + '</span></div><p class="lead">' + lead + '</p>' + (who ? '<p class="whofills"><b>Who fills this in</b>' + who + '</p>' : '') + '</div>';
+  }
+  function scaleLegend(mode) {
+    var labels = mode === 'child' ? LBL.child : LBL.adult;
+    return '<div class="scale-legend" aria-hidden="true">' + SCALE.map(function (x) { return '<span class="' + CLS[x] + '">' + esc(labels[x]) + '</span>'; }).join('') + '</div>' +
+      '<div class="scale-ends"><span>Seeks more, or may not notice: possibly hyposensitive</span><span style="text-align:right">Finds it too much: possibly hypersensitive</span></div>';
+  }
+  function sensoryRows(who) {
+    return '<div class="feel-list">' + DOMAINS.map(function (d) {
+      return '<div class="feel"><div class="feel-q">' + esc(d.name) + '<small>' + esc(d.detail) + '</small></div>' + likert(who, d.key, 'adult') + '</div>';
+    }).join('') + '</div>';
+  }
+  function tags(list, extra) {
+    var all = (list || []).slice(); if (extra && String(extra).trim()) all.push(String(extra).trim());
+    return all.length ? '<div class="tags">' + all.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div>' : '<p class="muted">Not filled in yet</p>';
+  }
+  function text(v) { return v && String(v).trim() ? '<p>' + esc(String(v).trim()) + '</p>' : '<p class="muted">Not filled in yet</p>'; }
+  function kv(label, body) { return '<div class="kv"><span>' + label + '</span>' + body + '</div>'; }
+  function ideasBlock(p) {
+    var list = ideas(p);
+    if (!list.length) return '<p class="muted">Ideas appear here once the sensory ratings show a sense the ākonga seeks or avoids.</p>';
+    var strat = p.kaiako.strategies || '';
+    return '<div class="ideas">' + list.map(function (g) {
+      var x = g.side === 'avoid' ? -1 : 1;
+      return '<div class="idea-group"><h4>' + esc(g.d.name) + ' <span class="status lean ' + CLS[x] + '">' + esc(words(g.d)[x]) + '</span></h4><ul>' + g.tips.map(function (tip) {
+        return '<li><span>' + esc(tip) + '</span>' + (strat.indexOf(tip) >= 0 ? '<span class="added">In plan</span>' : '<button type="button" class="btn btn-small" data-action="add-idea" data-value="' + esc(tip) + '" data-k="' + esc('idea:' + tip) + '">Add</button>') + '</li>';
+      }).join('') + '</ul></div>';
+    }).join('') + '</div>';
+  }
+
+  /* ---------- Views ---------- */
+  function viewAkonga(p) {
+    var a = p.akonga;
+    return head('Ākonga', 'Learner voice', 'Kia ora! This part is all about you. There are no right or wrong answers. A kaiako or someone from your whānau can read the questions with you and write down what you say.', 'The ākonga, with support if needed') +
+      card('Ko wai koe? · Who are you?', '<div class="who-grid">' + photo('akonga', a.name) + '<div class="fields">' +
+        field('Ingoa · Name', 'akonga.name', { live: true }) + field('Rā whānau · Birthday', 'akonga.birthdate', { type: 'date' }) +
+        field('Iwi, hapū, culture or clan', 'akonga.iwi', { placeholder: 'Who are your people?', span: true }) +
+        field('Important whānau members', 'akonga.whanauMembers', { type: 'textarea', rows: 2, placeholder: 'Who are the important people in your life?', span: true }) + '</div></div>') +
+      card('Which Atua do you like best, and why?', atuaPicker('akonga') + field('Why?', 'akonga.atuaWhy', { type: 'textarea', rows: 2 })) +
+      card('What things do you love to do?', chips('akonga.loves', LOVES, 'Things I love') + field('Something else', 'akonga.lovesOther')) +
+      card('How do you like the classroom to be?', chips('akonga.classroom', CLASSROOM, 'Classroom') + '<div class="grid-2">' + field('Other', 'akonga.classroomOther', { placeholder: 'Furniture, art, colour scheme…' }) + field('Comments', 'akonga.classroomComments', { type: 'textarea', rows: 2 }) + '</div>') +
+      card('How do these feel for you?', '<div class="feel-list">' + DOMAINS.map(function (d) {
+        return '<div class="feel"><div class="feel-q">' + esc(d.child) + '</div>' + likert('akonga', d.key, 'child') + '</div>';
+      }).join('') + '</div>' + field('Comments', 'akonga.sensoryComments', { type: 'textarea', rows: 2 }), 'Tap the face that matches how you feel. Tap it again to clear it.') +
+      card('What helps you learn best?', chips('akonga.learn', LEARN, 'Helps me learn') + '<div class="grid-2">' + field('Other', 'akonga.learnOther', { placeholder: 'Clothing, ear muffs, special glasses, hearing aids…' }) + field('Comments', 'akonga.learnComments', { type: 'textarea', rows: 2 }) + '</div>') +
+      card('How do you feel about…?', '<div class="feel-list">' + AKONGA_HAPPY.map(function (q) {
+        return '<div class="feel"><div class="feel-q">' + esc(q.label) + '</div>' + happyButtons('akonga', q.key, [5, 4, 3, 2, 1], q.label) + '</div>';
+      }).join('') + '</div>' + field('Comments', 'akonga.happyComments', { type: 'textarea', rows: 2 })) +
+      card('Activities and breaks',
+        '<h4>How do you like to get ready for your day?</h4>' + chips('akonga.prepare', DAY, 'Getting ready') + '<div class="grid-2">' + field('Something else', 'akonga.prepareOther') + field('Comments', 'akonga.prepareComments', { type: 'textarea', rows: 2 }) + '</div>' +
+        '<h4>How often do you need a break?</h4>' + options('akonga.breakFreq', BREAKS, 'Breaks') + field('Comments', 'akonga.breakComments', { type: 'textarea', rows: 2 }) +
+        '<h4>What do you like to do in your break time?</h4>' + chips('akonga.breakActs', DAY, 'Break time') + field('Something else', 'akonga.breakOther') +
+        '<h4>How do you like to end your day?</h4>' + chips('akonga.endDay', DAY, 'End of day') + field('Something else', 'akonga.endOther')) +
+      card('Is there anything you don’t like that you think people should know about?', field('Things I don’t like', 'akonga.dislikes', { type: 'textarea', rows: 3, hideLabel: true, placeholder: 'Sounds, smells, tastes, colours, personal space…' }));
+  }
+
+  function viewWhanau(p) {
+    var w = p.whanau;
+    return head('Whānau', 'Family voice', 'Nau mai, haere mai. You know your child or mokopuna better than anyone. Your kōrero helps kaiako understand what helps them feel safe, happy and ready to learn.', 'Parents, grandparents, caregivers or other whānau') +
+      card('Ko wai koe? · Who are you?', '<div class="who-grid">' + photo('whanau', w.name) + '<div class="fields">' +
+        field('Ingoa · Name', 'whanau.name') + field('Relationship to the ākonga', 'whanau.relationship', { list: 'rel-list' }) +
+        field('Iwi, hapū, culture or clan', 'whanau.iwi', { span: true }) + '</div></div>' +
+        '<datalist id="rel-list"><option>Mum</option><option>Dad</option><option>Nan</option><option>Koro</option><option>Aunty</option><option>Uncle</option><option>Older sibling</option><option>Caregiver</option><option>Whāngai parent</option></datalist>') +
+      '<div class="grid-2">' + card('What strengths does your child or mokopuna bring to your whānau?', field('Strengths', 'whanau.strengths', { type: 'textarea', rows: 3, hideLabel: true })) +
+      card('What are your hopes for your child or mokopuna?', field('Hopes', 'whanau.hopes', { type: 'textarea', rows: 3, hideLabel: true })) + '</div>' +
+      card('Which Atua do you think best represents your child or mokopuna, and why?', atuaPicker('whanau') + field('Why?', 'whanau.atuaWhy', { type: 'textarea', rows: 2 })) +
+      card('Happiness gauge', '<div class="gauges">' + HAPPY.map(gauge).join('') + '</div>', 'Choose where the needle sits for each one.') +
+      card('What do you notice at home?', scaleLegend('adult') + sensoryRows('whanau') + field('Notes', 'whanau.sensoryNotes', { type: 'textarea', rows: 2 }), 'For each sense, choose what fits best. Tap again to clear it.') +
+      card('What are the most important things for kaiako and support people to know so your child can flourish and experience success?', field('Most important things to know', 'whanau.important', { type: 'textarea', rows: 4, hideLabel: true }));
+  }
+
+  function viewKaiako(p) {
+    var k = p.kaiako;
+    return head('Kaiako', 'Kaiako and kaiāwhina', 'Your observations from the classroom sit alongside the ākonga and whānau views. Note what you see, what helps, and what you are trying.', 'Kaiako, kaiāwhina and support staff') +
+      card('Ko wai koe? · Who are you?', '<div class="who-grid">' + photo('kaiako', k.name) + '<div class="fields">' +
+        field('Ingoa · Name', 'kaiako.name') + field('Role', 'kaiako.role', { list: 'role-list' }) +
+        field('Iwi, hapū, culture or clan', 'kaiako.iwi', { span: true }) + '</div></div>' +
+        '<datalist id="role-list"><option>Kaiako</option><option>Kaiāwhina</option><option>Teacher aide</option><option>SENCO</option><option>RTLB</option><option>Specialist teacher</option><option>Tumuaki</option></datalist>') +
+      '<div class="grid-2">' + card('What strengths do you bring to this ākonga and their whānau?', field('Strengths you bring', 'kaiako.strengths', { type: 'textarea', rows: 3, hideLabel: true })) +
+      card('What are your hopes for this ākonga?', field('Hopes', 'kaiako.hopes', { type: 'textarea', rows: 3, hideLabel: true })) + '</div>' +
+      card('Which Atua do you feel best represents this ākonga, and why?', atuaPicker('kaiako') + field('Why?', 'kaiako.atuaWhy', { type: 'textarea', rows: 2 })) +
+      card('What do you observe about their sensory needs?', scaleLegend('adult') + sensoryRows('kaiako') + field('Observations of the sensory environment and needs', 'kaiako.sensoryObs', { type: 'textarea', rows: 3 }), 'Rate what you see at kura. Tap again to clear it.') +
+      card('What do you observe about their happiness at kura?', '<div>' + KAIAKO_HAPPY.map(function (q) {
+        return '<div class="rate-row"><div class="feel-q">' + esc(q.label) + '</div>' + happyButtons('kaiako', q.key, [1, 2, 3, 4, 5], q.label) + '</div>';
+      }).join('') + '</div>' + field('Observations of happiness at kura', 'kaiako.happinessObs', { type: 'textarea', rows: 3 }), 'Rate what you see, then add your observations. Tap again to clear a rating.') +
+      card('What strategies and interventions have you put in place?', field('Strategies and interventions', 'kaiako.strategies', { type: 'textarea', rows: 6, hideLabel: true, placeholder: 'One strategy per line' }) +
+        '<h4>Ideas from the sensory profile</h4>' + ideasBlock(p));
+  }
+
+  function viewSensory(p) {
+    return head('Sensory', 'Three views, side by side', 'Each sense has three rows: the ākonga, their whānau and their kaiako. Where the rows line up, you can plan with confidence. Where they differ, talk about it together. Differences often show that a learner copes differently at home and at kura.', 'Each person fills in their own row, here or in their own section') +
+      card('', scaleLegend('adult') + '<div class="chart-key">' + WHOS.map(function (w) { return '<span><span class="pin pin-' + w + '">' + WHO[w].short + '</span>' + WHO[w].label + '</span>'; }).join('') + '</div>') +
+      '<div class="tri-list">' + DOMAINS.map(function (d) {
+        var v = vals(p, d.key);
+        var t = p.rongo.types[d.key] || []; var note = p.rongo.notes[d.key] || '';
+        var okey = 'more-' + d.key; var open = ui.open[okey] != null ? ui.open[okey] : (t.length > 0 || !!note);
+        return '<section class="card"><div class="tri-head"><div><h3>' + esc(d.name) + '</h3><p class="hint">' + esc(d.detail) + '</p></div>' + statusChip(d, v) + '</div>' +
+          '<div class="tri-rows">' + WHOS.map(function (w) {
+            return '<div class="tri-row"><div class="who"><span class="pin pin-' + w + '">' + WHO[w].short + '</span>' + WHO[w].label + '</div>' + likert(w, d.key, w === 'akonga' ? 'child' : 'adult') + '</div>';
+          }).join('') + '</div>' +
+          '<details class="more" data-ok="' + okey + '"' + (open ? ' open' : '') + '><summary>Types and triggers' + (t.length ? ' (' + t.length + ')' : '') + '</summary>' + chips('rongo.types.' + d.key, d.types, d.name + ' types') + field('Notes', 'rongo.notes.' + d.key, { type: 'textarea', rows: 2 }) + '</details></section>';
+      }).join('') + '</div>';
+  }
+
+  function viewTikanga(p) {
+    return head('Tikanga', 'Culture, identity and care', 'Culture shapes how a learner expresses, understands and manages neurodivergence. For example, neurodivergent ākonga who whakapapa Māori may be seen as taonga with enhanced mana, and whānau-centred decisions may be preferred over individual choice. Record what matters to this ākonga and their whānau, and check it with them.', 'Ākonga, whānau and kaiako together') +
+      card('Name and pronunciation', '<div class="grid-2">' + field('Preferred name', 'tikanga.preferredName', { live: true }) + field('How to say it', 'tikanga.pronunciation', { placeholder: 'e.g. MEH-reh, or who to check with' }) + '</div>') +
+      card('Te reo Māori and tikanga in the day', chips('tikanga.reo', REO, 'Te reo and tikanga') + '<h4>Care for tapu</h4>' + chips('tikanga.care', CARE, 'Care for tapu') + field('Notes', 'tikanga.reoNotes', { type: 'textarea', rows: 2 })) +
+      card('Touch, eye contact and personal space', '<h4>Physical contact</h4>' + options('tikanga.touch', TOUCH, 'Physical contact') + '<h4>Eye contact</h4>' + options('tikanga.eye', EYE, 'Eye contact') + '<h4>Personal space</h4>' + options('tikanga.space', SPACE, 'Personal space') + field('Notes', 'tikanga.contactNotes', { type: 'textarea', rows: 2 })) +
+      '<div class="grid-2">' + card('Decision-making', options('tikanga.decide', DECIDE, 'Decision-making') + field('Who should we talk with first?', 'tikanga.contactPerson')) +
+      card('Clothing', chips('tikanga.clothing', CLOTHING, 'Clothing') + field('Notes', 'tikanga.clothingNotes')) + '</div>' +
+      card('Other cultural or spiritual considerations', field('Other considerations', 'tikanga.other', { type: 'textarea', rows: 3, hideLabel: true, placeholder: 'Spiritual and ancestral perspectives, whānau views on diagnosis, events to plan around…' }));
+  }
+
+  function poutamaChart(revs) {
+    var n = revs.length, colW = n <= 4 ? 120 : Math.max(62, Math.floor(560 / n));
+    var padL = 36, padR = 16, padT = 28, padB = 46, plotH = 180;
+    var W = padL + padR + colW * n, H = padT + plotH + padB;
+    function y(v) { return padT + plotH - (v / 5) * plotH; }
+    var s = '<defs><pattern id="pg-stitch" width="8" height="8" patternUnits="userSpaceOnUse"><rect class="pg-pat-bg" width="8" height="8"/><path class="pg-pat-line" d="M0 4h8"/></pattern></defs>';
+    for (var l = 1; l <= 5; l++) s += '<line class="pg-grid" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + y(l) + '" y2="' + y(l) + '"/><text class="pg-ylab" x="' + (padL - 10) + '" y="' + (y(l) + 4) + '" text-anchor="end">' + l + '</text>';
+    var cols = '', path = '', labels = '';
+    revs.forEach(function (r, i) {
+      var o = overall(r); var x0 = padL + i * colW; var top = o == null ? y(0) : y(o);
+      if (o != null) {
+        cols += '<rect x="' + (x0 + 4) + '" y="' + top.toFixed(1) + '" width="' + (colW - 8) + '" height="' + (y(0) - top).toFixed(1) + '" fill="url(#pg-stitch)"/>';
+        cols += '<text class="pg-val" x="' + (x0 + colW / 2) + '" y="' + (top - 9).toFixed(1) + '" text-anchor="middle">' + o.toFixed(1) + '</text>';
+      }
+      path += (i === 0 ? 'M ' + x0 + ' ' + top.toFixed(1) : ' V ' + top.toFixed(1)) + ' H ' + (x0 + colW);
+      labels += '<text class="pg-xlab" x="' + (x0 + colW / 2) + '" y="' + (padT + plotH + 18) + '" text-anchor="middle">' + esc(termShort(r.term)) + '</text><text class="pg-xlab2" x="' + (x0 + colW / 2) + '" y="' + (padT + plotH + 34) + '" text-anchor="middle">' + esc(r.year) + '</text>';
+    });
+    var last = revs[revs.length - 1]; var lo = overall(last);
+    var cap = lo == null ? '' : '<rect class="pg-last" x="' + (padL + (n - 1) * colW + 4) + '" y="' + (y(lo) - 2).toFixed(1) + '" width="' + (colW - 8) + '" height="4"/>';
+    s += cols + '<line class="pg-base" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + y(0) + '" y2="' + y(0) + '"/><path class="pg-step" d="' + path + '"/>' + cap + labels;
+    var desc = revs.map(function (r) { var o = overall(r); return r.year + ' ' + r.term + ': ' + (o == null ? 'not rated' : o.toFixed(1)); }).join('; ');
+    return '<div class="chart-scroll"><svg class="poutama" viewBox="0 0 ' + W + ' ' + H + '" style="max-width:' + W + 'px;min-width:' + Math.min(W, n * 58 + 52) + 'px" role="img" aria-label="Poutama progress chart. ' + esc(desc) + '">' + s + '</svg></div>' +
+      '<p class="levels">' + [1, 2, 3, 4, 5].map(function (l) { return '<span><b>' + l + '</b> ' + LEVELS[l] + '</span>'; }).join('') + '</p>';
+  }
+  function reviewLabel(r) { return esc(r.year + ' ' + termShort(r.term)); }
+  function indicatorTable(revs) {
+    var headRow = '<tr><th scope="col">Area</th>' + revs.map(function (r) { return '<th scope="col">' + reviewLabel(r) + '</th>'; }).join('') + '</tr>';
+    var rows = INDICATORS.map(function (ind) {
+      return '<tr><th scope="row">' + esc(ind.label) + '</th>' + revs.map(function (r) { var v = r[ind.key]; return '<td>' + (typeof v === 'number' ? '<span class="lvl l' + v + '" title="' + LEVELS[v] + '">' + v + '</span>' : '<span class="muted">–</span>') + '</td>'; }).join('') + '</tr>';
+    }).join('');
+    rows += WHOS.map(function (w) {
+      return '<tr><th scope="row">' + (w === 'kaiako' ? 'Kaiako observed happiness' : WHO[w].label + ' happiness') + ' (average)</th>' + revs.map(function (r) { var h = reviewHappy(r, w); return '<td>' + (h != null ? '<span class="lvl l' + Math.round(h) + '">' + h.toFixed(1) + '</span>' : '<span class="muted">–</span>') + '</td>'; }).join('') + '</tr>';
+    }).join('');
+    return '<div class="table-scroll"><table class="rtable"><thead>' + headRow + '</thead><tbody>' + rows + '</tbody></table></div>';
+  }
+  function sensoryChangeTable(revs) {
+    var headRow = '<tr><th scope="col">Sense (all views combined)</th>' + revs.map(function (r) { return '<th scope="col">' + reviewLabel(r) + '</th>'; }).join('') + '</tr>';
+    var rows = DOMAINS.map(function (d) {
+      return '<tr><th scope="row">' + esc(d.name) + '</th>' + revs.map(function (r) {
+        var v = r.sensory && r.sensory[d.key]; var s = v ? stats(v) : { n: 0 };
+        if (!s.n) return '<td><span class="muted">–</span></td>';
+        var x = SCALE[leanIndex(s.mean)];
+        return '<td><span class="cell ' + CLS[x] + '">' + esc(words(d)[x]) + '</span></td>';
+      }).join('') + '</tr>';
+    }).join('');
+    return '<div class="table-scroll"><table class="rtable"><thead>' + headRow + '</thead><tbody>' + rows + '</tbody></table></div>';
+  }
+  function newDraft() { return { year: new Date().getFullYear(), term: currentTerm(), notes: '' }; }
+  function viewPoutama(p) {
+    var revs = sortedReviews(p);
+    if (!ui.draft) ui.draft = newDraft();
+    var d = ui.draft;
+    var html = head('Poutama', 'Term and year reviews', 'At the end of each term or year, meet with the ākonga and their whānau, talk through the profile and save a review. Each review keeps a snapshot of the sensory ratings and whānau happiness so you can see what has changed. Each step of the Poutama shows the overall level for that review.', 'Kaiako, with the ākonga and whānau');
+    html += card('Progress on the Poutama', revs.length ? poutamaChart(revs) : '<div class="empty"><b>No reviews saved yet</b><span>Save the first review below to start the Poutama.</span></div>', revs.length ? 'Each step is the average of the four review areas, rated 1 to 5.' : '');
+    if (revs.length) html += card('What has changed', '<h4>Review areas</h4>' + indicatorTable(revs) + '<h4>Sensory ratings at each review</h4>' + sensoryChangeTable(revs));
+    html += card('Save a review',
+      '<div class="review-meta">' + field('Year', '@draft.year', { type: 'number', min: 2000, max: 2100 }) + field('Term', '@draft.term', { type: 'select', options: TERMS }) + '</div>' +
+      '<div>' + INDICATORS.map(function (ind) {
+        var path = '@draft.' + ind.key; var cur = d[ind.key];
+        return '<div class="rate-row"><div class="feel-q">' + esc(ind.label) + '</div><div class="rate-btns" role="radiogroup" aria-label="' + esc(ind.label) + '">' + [1, 2, 3, 4, 5].map(function (n) {
+          return '<button type="button" class="rb l' + n + '" role="radio" aria-checked="' + (cur === n) + '" data-set="' + path + '" data-value="' + n + '" data-num="1" data-k="' + esc('r:' + path + ':' + n) + '" aria-label="' + n + ' ' + LEVELS[n] + '"><b>' + n + '</b><span class="rb-word">' + LEVELS[n] + '</span></button>';
+        }).join('') + '</div></div>';
+      }).join('') + '</div>' +
+      '<p class="levels rb-key">' + [1, 2, 3, 4, 5].map(function (l) { return '<span><b>' + l + '</b> ' + LEVELS[l] + '</span>'; }).join('') + '</p>' +
+      field('What has changed? What are the next steps?', '@draft.notes', { type: 'textarea', rows: 3 }) +
+      '<div><button type="button" class="btn btn-primary" data-action="save-review">Save review</button></div>',
+      'The current sensory and happiness ratings from all three voices are saved with the review.');
+    if (revs.length) {
+      html += card('Saved reviews', '<div class="rlist">' + revs.slice().reverse().map(function (r) {
+        var o = overall(r);
+        var conf = ui.confirm === 'review:' + r.id;
+        return '<div class="ritem"><div class="ritem-head"><b>' + esc(r.year + ' · ' + r.term) + '</b><span class="muted">' + (o == null ? 'Not rated' : 'Overall ' + o.toFixed(1) + ' · ' + LEVELS[Math.round(o)]) + '</span></div>' +
+          (r.notes ? '<p>' + esc(r.notes) + '</p>' : '') +
+          '<div class="no-export">' + (conf ? '<span>Delete this review? </span><button type="button" class="btn btn-small btn-danger" data-action="delete-review" data-value="' + esc(r.id) + '">Delete</button> <button type="button" class="btn btn-small" data-action="cancel">Keep</button>' : '<button type="button" class="btn btn-small btn-quiet" data-action="ask-delete-review" data-value="' + esc(r.id) + '" data-k="' + esc('dr:' + r.id) + '">Delete review</button>') + '</div></div>';
+      }).join('') + '</div>');
+    }
+    return html;
+  }
+
+  function sensoryChart(p) {
+    var flagged = [];
+    var rows = DOMAINS.map(function (d) {
+      var v = vals(p, d.key); var s = stats(v);
+      if (s.n >= 2 && s.spread >= 2) flagged.push({ d: d, v: v });
+      var lanes = WHOS.map(function (w) {
+        var x = v[w];
+        return '<div class="lane">' + (x == null ? '' : '<span class="pin pin-' + w + '" style="grid-column:' + (SCALE.indexOf(x) + 1) + '" title="' + esc(WHO[w].label + ': ' + scaleLabel(w, d.key, x)) + '">' + WHO[w].short + '</span>') + '</div>';
+      }).join('');
+      return '<div class="srow"><div class="srow-label"><span class="srow-name">' + esc(d.name) + '</span>' + statusChip(d, v) + '</div><div class="strack" role="img" aria-label="' + esc(d.name + ': ' + WHOS.map(function (w) { return WHO[w].label + ' ' + (v[w] == null ? 'not rated' : scaleLabel(w, d.key, v[w])); }).join(', ')) + '">' + lanes + '</div></div>';
+    }).join('');
+    var headRow = '<div class="srow srow-head" aria-hidden="true"><div></div><div class="scols">' + SCALE.map(function (x) { return '<span>' + LBL.adult[x] + '</span>'; }).join('') + '</div></div>';
+    var talk = flagged.length ? '<div class="talk"><h4>Talk about these together</h4><ul>' + flagged.map(function (f) {
+      return '<li><b>' + esc(f.d.name) + ':</b> ' + WHOS.filter(function (w) { return f.v[w] != null; }).map(function (w) { return esc(WHO[w].label + ' ' + scaleLabel(w, f.d.key, f.v[w]).toLowerCase()); }).join(', ') + '</li>';
+    }).join('') + '</ul></div>' : '';
+    return '<div class="schart">' + headRow + rows + '</div><div class="chart-key">' + WHOS.map(function (w) { return '<span><span class="pin pin-' + w + '">' + WHO[w].short + '</span>' + WHO[w].label + '</span>'; }).join('') + '<span>Left: seeks more or may not notice. Right: finds it too much.</span></div>' + talk;
+  }
+
+  function viewSummary(p, inFull) {
+    var a = p.akonga, w = p.whanau, k = p.kaiako, t = p.tikanga;
+    var name = displayName(p);
+    var meta = [age(a.birthdate), a.iwi].filter(Boolean);
+    var atuaBadges = WHOS.filter(function (x) { return p[x].atua; }).map(function (x) {
+      var why = (p[x].atuaWhy || '').trim();
+      return '<div class="atua-badge"><span class="atua-icon">' + atuaIcon(p[x].atua) + '</span><div><span class="who-tag"><span class="pin pin-' + x + '">' + WHO[x].short + '</span>' + WHO[x].label + ' chose</span><b>' + esc(atuaName(p, x)) + '</b>' + (why ? '<span class="why">“' + esc(why) + '”</span>' : '') + '</div></div>';
+    }).join('');
+    var done = [
+      { tab: 'akonga', label: 'Ākonga', ok: p.akonga.updated > 0 },
+      { tab: 'whanau', label: 'Whānau', ok: p.whanau.updated > 0 },
+      { tab: 'kaiako', label: 'Kaiako', ok: p.kaiako.updated > 0 },
+      { tab: 'tikanga', label: 'Tikanga', ok: p.tikanga.updated > 0 },
+      { tab: 'poutama', label: p.reviews.length ? p.reviews.length + (p.reviews.length === 1 ? ' review' : ' reviews') : 'No reviews yet', ok: p.reviews.length > 0 }
+    ];
+    var contrib = ['whanau', 'kaiako'].filter(function (x) { return (p[x].name || '').trim(); }).map(function (x) {
+      var sub = x === 'whanau' ? p.whanau.relationship : p.kaiako.role;
+      return '<span class="contrib-item">' + avatar(p[x].photo, p[x].name, 'sm') + '<span><b>' + esc(p[x].name) + '</b>' + (sub ? ' · ' + esc(sub) : '') + '</span></span>';
+    }).join('');
+    var hero = '<section class="card hero"><div>' + avatar(a.photo, name, 'lg') + '</div><div>' +
+      '<p class="eyebrow">Individual sensory profile</p><h2 class="hero-name">' + esc(name) + '</h2>' +
+      '<p class="hero-meta">' + (meta.length ? meta.map(esc).join(' · ') : 'Add details in the Ākonga section') + '</p>' +
+      (t.pronunciation ? '<p class="hero-say">Say it: <b>' + esc(t.pronunciation) + '</b></p>' : '') +
+      (contrib ? '<div class="contrib"><span class="eyebrow">Created with</span>' + contrib + '</div>' : '') +
+      (atuaBadges ? '<div class="atua-trio">' + atuaBadges + '</div>' : '') + '</div></section>' +
+      '<div class="progress-strip no-print no-export" aria-label="Sections filled in">' + done.map(function (s) { return '<button type="button" class="pstep ' + (s.ok ? 'done' : 'todo') + '" data-tab="' + s.tab + '">' + esc(s.label) + '</button>'; }).join('') + '</div>';
+
+    var strengths = card('Strengths and interests', '<div class="sum-grid">' +
+      kv('Loves to do', tags(a.loves, a.lovesOther)) +
+      kv('Strengths whānau see', text(w.strengths)) +
+      kv('Strengths kaiako bring', text(k.strengths)) +
+      kv('Whānau hopes', text(w.hopes)) +
+      kv('Kaiako hopes', text(k.hopes)) + '</div>');
+    var sensory = card('Sensory profile', sensoryChart(p), 'Each sense shows the three views. Lined-up dots mean everyone sees the same thing.');
+    var breaks = [a.breakFreq ? a.breakFreq : ''].filter(Boolean);
+    var helps = '<div class="sum-grid">' +
+      card('What helps me learn', kv('Learning', tags(a.learn, a.learnOther)) + (a.learnComments ? text(a.learnComments) : '') + kv('Classroom', tags(a.classroom, a.classroomOther)) + (a.classroomComments ? text(a.classroomComments) : '')) +
+      card('Breaks and routines', kv('Getting ready for the day', tags(a.prepare, a.prepareOther)) + kv('Breaks', breaks.length ? '<p>' + esc(breaks[0]) + (a.breakComments ? '. ' + esc(a.breakComments) : '') + '</p>' : '<p class="muted">Not filled in yet</p>') + kv('Break time', tags(a.breakActs, a.breakOther)) + kv('End of the day', tags(a.endDay, a.endOther))) + '</div>';
+    var know = '<div class="sum-grid">' +
+      card('Please know', kv('Things I don’t like', text(a.dislikes)) + kv('Most important, from whānau', text(w.important))) +
+      card('Tikanga and care', (function () {
+        var items = [].concat(t.reo, t.care);
+        if (t.touch) items.push('Touch: ' + t.touch);
+        if (t.eye) items.push('Eye contact: ' + t.eye);
+        if (t.space) items.push('Personal space: ' + t.space);
+        if (t.decide) items.push(t.decide + (t.contactPerson ? ' (talk with ' + t.contactPerson + ')' : ''));
+        return tags(items) + (t.clothing.length ? kv('Clothing', tags(t.clothing, t.clothingNotes)) : '') + (t.other ? text(t.other) : '');
+      })()) + '</div>';
+    var happyRows = HAPPY_AREAS.map(function (ar) {
+      var xs = [];
+      var cells = WHOS.map(function (x) {
+        var asked = HAPPY_ASKED[x].some(function (q) { return q.key === ar.key; });
+        if (!asked) return '<td><span class="muted" title="Not asked of ' + WHO[x].label + '">·</span></td>';
+        var v = p[x].happy[ar.key];
+        if (typeof v !== 'number') return '<td><span class="muted">–</span></td>';
+        xs.push(v);
+        return '<td><span class="lvl l' + v + '">' + v + '</span> <span class="hl">' + esc(happyLabel(x, ar.key, v)) + '</span></td>';
+      }).join('');
+      var differ = xs.length >= 2 && Math.max.apply(null, xs) - Math.min.apply(null, xs) >= 2;
+      return '<tr><th scope="row">' + esc(ar.label) + (differ ? '<span class="status differ">Views differ</span>' : '') + '</th>' + cells + '</tr>';
+    }).join('');
+    var happyNotes = HAPPY.filter(function (h) { return w.happyNote[h.key]; }).map(function (h) { return esc(w.happyNote[h.key]); });
+    var happy = card('Happiness', '<div class="table-scroll"><table class="rtable htable"><thead><tr><th scope="col">Area</th>' + WHOS.map(function (x) {
+      return '<th scope="col"><span class="who"><span class="pin pin-' + x + '">' + WHO[x].short + '</span>' + WHO[x].label + '</span></th>';
+    }).join('') + '</tr></thead><tbody>' + happyRows + '</tbody></table></div>' +
+      '<div class="sum-grid">' + kv('Ākonga said', text(a.happyComments)) + kv('Whānau said', happyNotes.length ? '<p>' + happyNotes.join(' ') + '</p>' : '<p class="muted">Not filled in yet</p>') + kv('What kaiako observe', text(k.happinessObs)) + '</div>',
+      'Ratings from 1 (very unhappy) to 5 (very happy). A dot means that voice was not asked about this area.');
+    var plan = card('Implications of this profile', field('What this profile means for teaching and learning', 'plan.implications', { type: 'textarea', rows: 4, print: true, placeholder: 'What does this profile tell us? What will we change in the learning environment?' }) +
+      '<div class="yellow-box">' + kv('Strategies and interventions', text(k.strategies)) + '</div><div class="no-export no-print"><h4>Ideas from the sensory profile</h4>' + ideasBlock(p) + '</div>');
+    var revs = sortedReviews(p);
+    var pout = revs.length ? card('Poutama', poutamaChart(revs) + (revs[revs.length - 1].notes ? kv('Latest review: ' + reviewLabel(revs[revs.length - 1]), text(revs[revs.length - 1].notes)) : ''), 'Overall level at each review, from 1 Struggling to 5 Flourishing.') : '';
+    var danger = '<div class="danger no-print no-export">' + (ui.confirm === 'delete-profile'
+      ? '<span>Delete ' + esc(name) + '’s profile from this browser? Save a file first if you want to keep a copy.</span><button type="button" class="btn btn-danger" data-action="delete-profile">Delete profile</button><button type="button" class="btn" data-action="cancel">Keep it</button>'
+      : '<button type="button" class="btn btn-quiet" data-action="ask-delete-profile" data-k="ask-del">Delete this profile from this browser</button>') + '</div>';
+    return hero + strengths + happy + sensory + helps + know + plan + pout + danger + (inFull ? '' : printedLine());
+  }
+
+  function exampleNotice(p) {
+    if (!p.example) return '';
+    return '<div class="notice no-print no-export"><p><b>This is an example.</b> Mere Tauira is a made-up learner, filled in to show how the profile works. Start a new profile for a real ākonga.</p><button type="button" class="btn btn-primary" data-action="new">Start a new profile</button></div>';
+  }
+
+  /* ---------- Full profile (print only) ---------- */
+  function printedLine() {
+    return '<p class="print-only hint">Printed ' + esc(new Date().toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' })) + '. This profile shows strengths, needs and strategies. It is not a diagnostic tool.</p>';
+  }
+  function ans(v) { return v != null && String(v).trim() ? esc(String(v).trim()) : '<span class="muted">Not filled in</span>'; }
+  function picks(arr, other) {
+    var all = (arr || []).slice(); if (other && String(other).trim()) all.push(String(other).trim());
+    return all.length ? esc(all.join(', ')) : '<span class="muted">None chosen</span>';
+  }
+  function qa(rows) { return '<dl class="qa">' + rows.map(function (r) { return '<div class="qa-row"><dt>' + esc(r[0]) + '</dt><dd>' + r[1] + '</dd></div>'; }).join('') + '</dl>'; }
+  function atuaAns(p, who) {
+    var n = atuaName(p, who); if (!n) return ans('');
+    var why = (p[who].atuaWhy || '').trim();
+    return esc(n) + (why ? '<br><span class="muted">Why:</span> ' + esc(why) : '');
+  }
+  function happyAns(p, who, key) { var v = p[who].happy[key]; return typeof v === 'number' ? '<span class="lvl l' + v + '">' + v + '</span> ' + esc(happyLabel(who, key, v)) : ans(''); }
+  function fullSection(title, body) { return '<section class="card flow"><h3>' + title + '</h3>' + body + '</section>'; }
+  function viewAppendix(p) {
+    var a = p.akonga, w = p.whanau, k = p.kaiako, t = p.tikanga;
+    var bd = a.birthdate ? new Date(a.birthdate + 'T00:00') : null;
+    var bday = bd && !isNaN(bd) ? bd.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' }) + (age(a.birthdate) ? ' (' + age(a.birthdate) + ')' : '') : '';
+    var akonga = qa([
+      ['Ingoa · Name', ans(a.name)],
+      ['Rā whānau · Birthday', ans(bday)],
+      ['Iwi, hapū, culture or clan', ans(a.iwi)],
+      ['Important whānau members', ans(a.whanauMembers)],
+      ['Favourite Atua', atuaAns(p, 'akonga')],
+      ['Things I love to do', picks(a.loves, a.lovesOther)],
+      ['How I like the classroom', picks(a.classroom, a.classroomOther)],
+      ['Classroom comments', ans(a.classroomComments)],
+      ['How the senses feel for me', ans(a.sensoryComments)],
+      ['What helps me learn best', picks(a.learn, a.learnOther)],
+      ['Learning comments', ans(a.learnComments)]
+    ].concat(AKONGA_HAPPY.map(function (q) { return ['How I feel about ' + q.label.toLowerCase(), happyAns(p, 'akonga', q.key)]; })).concat([
+      ['Happiness comments', ans(a.happyComments)],
+      ['Getting ready for my day', picks(a.prepare, a.prepareOther)],
+      ['Getting ready comments', ans(a.prepareComments)],
+      ['How often I need a break', ans([a.breakFreq, a.breakComments].filter(Boolean).join('. '))],
+      ['What I do at break time', picks(a.breakActs, a.breakOther)],
+      ['How I like to end my day', picks(a.endDay, a.endOther)],
+      ['Things I don’t like', ans(a.dislikes)]
+    ]));
+    var whanau = qa([
+      ['Ingoa · Name', ans(w.name)],
+      ['Relationship to the ākonga', ans(w.relationship)],
+      ['Iwi, hapū, culture or clan', ans(w.iwi)],
+      ['Strengths they bring to the whānau', ans(w.strengths)],
+      ['Hopes for them', ans(w.hopes)],
+      ['Atua that represents them', atuaAns(p, 'whanau')]
+    ].concat(HAPPY.map(function (h) { var note = w.happyNote[h.key]; return [h.label, happyAns(p, 'whanau', h.key) + (note ? '<br>' + esc(note) : '')]; })).concat([
+      ['What we notice at home', ans(w.sensoryNotes)],
+      ['Most important things to know', ans(w.important)]
+    ]));
+    var kaiako = qa([
+      ['Ingoa · Name', ans(k.name)],
+      ['Role', ans(k.role)],
+      ['Iwi, hapū, culture or clan', ans(k.iwi)],
+      ['Strengths I bring', ans(k.strengths)],
+      ['Hopes for this ākonga', ans(k.hopes)],
+      ['Atua that represents them', atuaAns(p, 'kaiako')]
+    ].concat(KAIAKO_HAPPY.map(function (q) { return [q.label, happyAns(p, 'kaiako', q.key)]; })).concat([
+      ['Happiness at kura', ans(k.happinessObs)],
+      ['Sensory observations', ans(k.sensoryObs)],
+      ['Strategies and interventions', ans(k.strategies)]
+    ]));
+    var sensory = '<div class="table-scroll"><table class="rtable ftable"><thead><tr><th scope="col">Sense</th><th scope="col">Ratings</th><th scope="col">Types, triggers and notes</th></tr></thead><tbody>' + DOMAINS.map(function (d) {
+      var v = vals(p, d.key); var types = p.rongo.types[d.key] || []; var note = p.rongo.notes[d.key] || '';
+      return '<tr><th scope="row">' + esc(d.name) + '</th><td>' + WHOS.map(function (x) {
+        return '<div class="rate-line"><span class="pin pin-' + x + '">' + WHO[x].short + '</span>' + (v[x] == null ? '<span class="muted">Not rated</span>' : '<span class="cell ' + CLS[v[x]] + '">' + esc(scaleLabel(x, d.key, v[x])) + '</span>') + '</div>';
+      }).join('') + '</td><td>' + (types.length ? esc(types.join(', ')) : '<span class="muted">None chosen</span>') + (note ? '<p class="cell-note">' + esc(note) + '</p>' : '') + '</td></tr>';
+    }).join('') + '</tbody></table></div>';
+    var tikanga = qa([
+      ['Preferred name', ans(t.preferredName)],
+      ['How to say it', ans(t.pronunciation)],
+      ['Te reo Māori and tikanga in the day', picks(t.reo)],
+      ['Care for tapu', picks(t.care)],
+      ['Te reo and tikanga notes', ans(t.reoNotes)],
+      ['Physical contact', ans(t.touch)],
+      ['Eye contact', ans(t.eye)],
+      ['Personal space', ans(t.space)],
+      ['Contact notes', ans(t.contactNotes)],
+      ['Decision-making', ans(t.decide)],
+      ['Who to talk with first', ans(t.contactPerson)],
+      ['Clothing', picks(t.clothing, t.clothingNotes)],
+      ['Other cultural or spiritual considerations', ans(t.other)]
+    ]);
+    var short = { wellbeing: 'Hauora', regulation: 'Regulation', engagement: 'Engagement', environment: 'Sensory environment' };
+    var revs = sortedReviews(p);
+    var reviews = revs.length ? '<div class="table-scroll"><table class="rtable ftable"><thead><tr><th scope="col">Review</th>' + INDICATORS.map(function (i) { return '<th scope="col">' + short[i.key] + '</th>'; }).join('') + '<th scope="col">What changed, next steps</th></tr></thead><tbody>' + revs.map(function (r) {
+      return '<tr><th scope="row">' + esc(r.year + ' ' + r.term) + '</th>' + INDICATORS.map(function (i) { var v = r[i.key]; return '<td>' + (typeof v === 'number' ? '<span class="lvl l' + v + '">' + v + '</span>' : '<span class="muted">–</span>') + '</td>'; }).join('') + '<td>' + ans(r.notes) + '</td></tr>';
+    }).join('') + '</tbody></table></div><p class="levels">' + [1, 2, 3, 4, 5].map(function (l) { return '<span><b>' + l + '</b> ' + LEVELS[l] + '</span>'; }).join('') + '</p>' : '<p class="muted">No reviews saved yet.</p>';
+    return '<div class="phead appendix-start"><div class="phead-title"><h2>Full profile</h2><span class="phead-sub">' + esc(displayName(p)) + '</span></div><p class="lead">Every answer, section by section, in each person’s own words.</p></div>' +
+      fullSection('Ākonga · Learner voice', akonga) + fullSection('Whānau · Family voice', whanau) + fullSection('Kaiako · Kaiako and kaiāwhina', kaiako) +
+      fullSection('Sensory · All three views, with triggers and notes', sensory) + fullSection('Tikanga · Culture and care', tikanga) + fullSection('Poutama · Term and year reviews', reviews);
+  }
+
+  var VIEWS = { summary: viewSummary, akonga: viewAkonga, whanau: viewWhanau, kaiako: viewKaiako, sensory: viewSensory, tikanga: viewTikanga, poutama: viewPoutama,
+    full: function (p) { return viewSummary(p, true) + viewAppendix(p) + printedLine(); } };
+
+  /* ---------- Render ---------- */
+  function renderSaved() {
+    var el = $('#saved'); if (!el) return;
+    if (!storageOk) { el.className = 'saved bad'; el.textContent = 'This browser is not keeping your changes. Use Save file to keep a copy.'; return; }
+    el.className = 'saved';
+    el.textContent = lastSaved ? 'Saved in this browser at ' + lastSaved.toLocaleTimeString('en-NZ', { hour: 'numeric', minute: '2-digit' }) : 'Saved in this browser only';
+  }
+  function renderChrome() {
+    var p = P();
+    $('#learner-select').innerHTML = store.order.map(function (id) {
+      var q = store.profiles[id];
+      return '<option value="' + esc(id) + '"' + (id === store.current ? ' selected' : '') + '>' + esc(displayName(q)) + (q.example ? ' (example)' : '') + '</option>';
+    }).join('');
+    $('#mini').innerHTML = avatar(p.akonga.photo, displayName(p), 'sm') + '<span>' + esc(displayName(p)) + '</span>';
+    $('#tabs').innerHTML = TABS.map(function (t) {
+      return '<button type="button" role="tab" class="tab" id="tab-' + t.key + '" aria-selected="' + (ui.tab === t.key) + '" aria-controls="panel" data-tab="' + t.key + '" data-k="tab:' + t.key + '"><span class="tab-label">' + t.label + '</span><span class="tab-sub">' + t.sub + '</span></button>';
+    }).join('');
+    $('#panel').setAttribute('aria-labelledby', 'tab-' + ui.tab);
+    renderSaved();
+    renderDrive();
+  }
+  function renderPanel() { var p = P(); $('#panel').innerHTML = exampleNotice(p) + VIEWS[ui.tab](p); }
+  function render() { renderChrome(); renderPanel(); }
+  function rerender() {
+    var a = document.activeElement; var k = a && a.getAttribute ? a.getAttribute('data-k') : null;
+    render();
+    if (k) { var n = document.querySelector('[data-k="' + CSS.escape(k) + '"]'); if (n) n.focus({ preventScroll: true }); }
+  }
+  function goTab(key) {
+    ui.tab = key; store.tab = key; ui.confirm = null; queueSave(); render();
+    var bar = $('.tabbar'); var top = $('#panel').getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 8;
+    if (window.scrollY > top) window.scrollTo({ top: top });
+    var t = document.getElementById('tab-' + key); if (t && t.scrollIntoView) t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+
+  var toastTimer = null;
+  function toast(msg) { var el = $('#toast'); el.textContent = msg; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function () { el.hidden = true; }, 4200); }
+
+  /* ---------- Files ---------- */
+  function offerFile(filename, data, mime) {
+    if (IS_ARTIFACT) {
+      return Promise.resolve(downloadsP).then(function (dl) {
+        if (!dl) { toast('Saving files isn’t available in this view.'); return false; }
+        return dl.save({ filename: filename, data: data }).then(function () { toast('Saved ' + filename); return true; }, function (err) {
+          var c = err && err.code;
+          if (c === 'declined') return false;
+          if (c === 'rate_limited') { toast('A save is already waiting for you to confirm.'); return false; }
+          toast('Saving files isn’t available in this view.'); return false;
+        });
+      });
+    }
+    var blob = new Blob([data], { type: mime }); var url = URL.createObjectURL(blob);
+    var link = document.createElement('a'); link.href = url; link.download = filename; document.body.appendChild(link); link.click(); link.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 3000);
+    toast('Saved ' + filename + ' to your downloads.');
+    return Promise.resolve(true);
+  }
+  function payload(p) { return JSON.stringify({ format: 'rongo-ma-tane-profile', version: 1, exported: new Date().toISOString(), profile: p }); }
+  function saveFile() {
+    saveNow();
+    var p = P();
+    offerFile('Rongo-ma-Tane_' + slug(displayName(p)) + '_' + todayISO() + '.json', payload(p), 'application/json');
+  }
+  // Brings a profile from a file or Drive into this browser. A profile already here keeps
+  // each section unless the incoming copy of that section was edited more recently.
+  function mergeIn(inc) {
+    normalise(inc);
+    var cur = store.profiles[inc.id];
+    if (!cur) { store.profiles[inc.id] = inc; store.order.push(inc.id); store.current = inc.id; return { took: [], msg: 'Opened ' + displayName(inc) + '’s profile.' }; }
+    var took = [];
+    SECTIONS.forEach(function (s) { if ((inc[s].updated || 0) > (cur[s].updated || 0)) { cur[s] = inc[s]; took.push(SECTION_NAME[s]); } });
+    var have = {}; cur.reviews.forEach(function (r) { have[r.id] = true; });
+    var nr = 0; inc.reviews.forEach(function (r) { if (!have[r.id]) { cur.reviews.push(r); nr++; } });
+    if (nr) took.push(nr === 1 ? '1 review' : nr + ' reviews');
+    cur.updated = Math.max(cur.updated || 0, inc.updated || 0);
+    store.current = cur.id;
+    return { took: took, msg: took.length ? 'Brought in newer ' + took.join(', ') + ' for ' + displayName(cur) + '.' : 'This browser already has everything in that file.' };
+  }
+  function openFile(file) {
+    var fr = new FileReader();
+    fr.onload = function () {
+      try {
+        var data = JSON.parse(fr.result);
+        var prof = data && data.profile ? data.profile : data;
+        if (!prof || typeof prof !== 'object' || !prof.id || !prof.akonga) throw new Error('not a profile');
+        var res = mergeIn(prof);
+        ui.draft = null; ui.confirm = null; saveNow(); render(); toast(res.msg);
+      } catch (e) { toast('That file isn’t a Rongo mā Tāne profile. Choose a .json file saved from this tool.'); }
+    };
+    fr.onerror = function () { toast('That file could not be read. Try saving it again.'); };
+    fr.readAsText(file);
+  }
+  function readPhoto(file, cb) {
+    var fr = new FileReader();
+    fr.onload = function () {
+      var img = new Image();
+      img.onload = function () {
+        var S = 360, c = document.createElement('canvas'); c.width = S; c.height = S;
+        var m = Math.min(img.naturalWidth, img.naturalHeight);
+        c.getContext('2d').drawImage(img, (img.naturalWidth - m) / 2, (img.naturalHeight - m) / 2, m, m, 0, 0, S, S);
+        cb(null, c.toDataURL('image/jpeg', 0.82));
+      };
+      img.onerror = function () { cb(new Error('format')); };
+      img.src = fr.result;
+    };
+    fr.onerror = function () { cb(new Error('read')); };
+    fr.readAsDataURL(file);
+  }
+  function summaryDoc(full) {
+    var p = P();
+    var clone = $('#panel').cloneNode(true);
+    clone.querySelectorAll('.no-export, .notice').forEach(function (n) { n.remove(); });
+    var css = document.getElementById('app-css').textContent;
+    var title = 'Rongo mā Tāne ' + (full ? 'full profile' : 'profile') + ': ' + displayName(p);
+    return '<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(title) + '</title>' +
+      '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@500;600;700&display=swap">' +
+      '<style>' + css + '</style></head><body class="export"><main class="wrap" style="display:grid;gap:16px">' + clone.innerHTML +
+      '<p class="hint">Rongo mā Tāne Individual Sensory Profile · Te Ara Whakamana · Printed ' + esc(new Date().toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' })) + '. Not a diagnostic tool.</p></main></body></html>';
+  }
+  // The summary prints from its own tab. The full profile is a print-only view (summary plus every answer),
+  // so once printing finishes the page goes back to the tab that was open.
+  function printProfile(full) {
+    var back = ui.tab;
+    ui.tab = full ? 'full' : 'summary';
+    if (!full) store.tab = 'summary';
+    render();
+    var done = function () { if (full) { ui.tab = back; render(); } };
+    if (IS_ARTIFACT) {
+      offerFile('Rongo-ma-Tane-' + (full ? 'full-profile' : 'summary') + '_' + slug(displayName(P())) + '_' + todayISO() + '.html', summaryDoc(full), 'text/html').then(done, done);
+      return;
+    }
+    var restore = function () { window.removeEventListener('afterprint', restore); done(); };
+    window.addEventListener('afterprint', restore);
+    setTimeout(function () { window.print(); }, 60);
+  }
+
+  /* ---------- Google Drive ---------- */
+  // Fill these in after the one-time Google Cloud setup in DRIVE-SETUP.md. They are safe to publish:
+  // Google only accepts them from the web addresses listed in the Cloud project.
+  var DRIVE_CONFIG = { clientId: '', apiKey: '', appId: '' };
+  var DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.file';
+  var DRIVE_API = 'https://www.googleapis.com/drive/v3/files';
+  var DRIVE_UPLOAD = 'https://www.googleapis.com/upload/drive/v3/files';
+  var drive = { state: 'off', token: null, expires: 0, tokenClient: null, pending: null, busy: false };
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement('script'); s.src = src; s.async = true;
+      s.onload = resolve; s.onerror = function () { reject(new Error('load')); };
+      document.head.appendChild(s);
+    });
+  }
+  function driveInit() {
+    if (!DRIVE_CONFIG.clientId || IS_ARTIFACT) { drive.state = 'off'; renderDrive(); return; }
+    if (!/^https?:$/.test(location.protocol)) { drive.state = 'local'; renderDrive(); return; }
+    drive.state = 'loading'; renderDrive();
+    Promise.all([loadScript('https://accounts.google.com/gsi/client'), loadScript('https://apis.google.com/js/api.js')]).then(function () {
+      drive.tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: DRIVE_CONFIG.clientId, scope: DRIVE_SCOPE,
+        callback: function (resp) {
+          var p = drive.pending; drive.pending = null; if (!p) return;
+          if (resp.error) { p.reject(new Error(resp.error)); return; }
+          drive.token = resp.access_token; drive.expires = Date.now() + (Number(resp.expires_in) || 3600) * 1000;
+          p.resolve(drive.token);
+        },
+        error_callback: function (err) { var p = drive.pending; drive.pending = null; if (p) p.reject(new Error((err && err.type) || 'popup_closed')); }
+      });
+      gapi.load('picker', function () { drive.state = 'ready'; renderDrive(); });
+    }).catch(function () { drive.state = 'error'; renderDrive(); });
+  }
+  // Must start inside a click: Google opens its sign-in window from here.
+  function driveToken() {
+    if (drive.token && Date.now() < drive.expires - 60000) return Promise.resolve(drive.token);
+    return new Promise(function (resolve, reject) {
+      drive.pending = { resolve: resolve, reject: reject };
+      drive.tokenClient.requestAccessToken({ prompt: '' });
+    });
+  }
+  function driveFetch(url, opts, retried) {
+    var o = Object.assign({}, opts || {});
+    o.headers = Object.assign({}, o.headers, { Authorization: 'Bearer ' + drive.token });
+    return fetch(url, o).then(function (res) {
+      if (res.status === 401 && !retried) { drive.token = null; return driveToken().then(function () { return driveFetch(url, opts, true); }); }
+      if (!res.ok) { var e = new Error('drive ' + res.status); e.status = res.status; throw e; }
+      return res;
+    });
+  }
+  function driveDownload(id) {
+    return driveFetch(DRIVE_API + '/' + encodeURIComponent(id) + '?alt=media&supportsAllDrives=true').then(function (r) { return r.json(); });
+  }
+  function driveCreate(name, folderId, body) {
+    var b = 'rmt' + Date.now().toString(36);
+    var meta = { name: name, mimeType: 'application/json', parents: [folderId] };
+    var data = '--' + b + '\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n' + JSON.stringify(meta) + '\r\n--' + b + '\r\nContent-Type: application/json\r\n\r\n' + body + '\r\n--' + b + '--';
+    return driveFetch(DRIVE_UPLOAD + '?uploadType=multipart&supportsAllDrives=true&fields=id,name', { method: 'POST', headers: { 'Content-Type': 'multipart/related; boundary=' + b }, body: data }).then(function (r) { return r.json(); });
+  }
+  function driveUpdate(id, body) {
+    return driveFetch(DRIVE_UPLOAD + '/' + encodeURIComponent(id) + '?uploadType=media&supportsAllDrives=true&fields=id,name', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: body }).then(function (r) { return r.json(); });
+  }
+  function drivePick(mode) {
+    return new Promise(function (resolve) {
+      var gp = google.picker;
+      var view = mode === 'folder'
+        ? new gp.DocsView(gp.ViewId.FOLDERS).setSelectFolderEnabled(true).setIncludeFolders(true).setMimeTypes('application/vnd.google-apps.folder')
+        : new gp.DocsView(gp.ViewId.DOCS).setIncludeFolders(true).setMimeTypes('application/json');
+      if (mode !== 'folder' && store.driveFolder) view.setParent(store.driveFolder.id);
+      new gp.PickerBuilder().addView(view).setOAuthToken(drive.token).setDeveloperKey(DRIVE_CONFIG.apiKey).setAppId(DRIVE_CONFIG.appId)
+        .enableFeature(gp.Feature.SUPPORT_DRIVES).setTitle(mode === 'folder' ? 'Choose the folder for profiles' : 'Open a profile')
+        .setCallback(function (data) {
+          if (data.action === gp.Action.PICKED) resolve(data.docs[0]);
+          else if (data.action === gp.Action.CANCEL) resolve(null);
+        }).build().setVisible(true);
+    });
+  }
+  function chooseFolder() {
+    return drivePick('folder').then(function (doc) {
+      if (!doc) return null;
+      store.driveFolder = { id: doc.id, name: doc.name }; saveNow(); renderDrive();
+      return store.driveFolder;
+    });
+  }
+  // Pulls in anything newer from the Drive copy first, so two people syncing never wipe out each other's sections.
+  function syncToDrive() {
+    var p = P(); var fileId = p.drive && p.drive.fileId;
+    if (fileId) {
+      return driveDownload(fileId).then(function (remote) {
+        var prof = remote && remote.profile ? remote.profile : remote;
+        var res = prof && prof.id === p.id ? mergeIn(prof) : null;
+        return driveUpdate(fileId, payload(P())).then(function () {
+          P().drive.synced = Date.now(); saveNow(); render();
+          return res && res.took.length ? 'Brought in newer ' + res.took.join(', ') + ' from Drive, then saved.' : 'Saved to Google Drive.';
+        });
+      });
+    }
+    return (store.driveFolder ? Promise.resolve(store.driveFolder) : chooseFolder()).then(function (folder) {
+      if (!folder) return 'Choose a Drive folder to save profiles in.';
+      return driveCreate('Rongo mā Tāne – ' + displayName(p) + '.json', folder.id, payload(p)).then(function (file) {
+        p.drive = { fileId: file.id, synced: Date.now() }; saveNow(); render();
+        return 'Saved ' + displayName(p) + '’s profile to ' + folder.name + '.';
+      });
+    });
+  }
+  function openFromDrive() {
+    return drivePick('file').then(function (doc) {
+      if (!doc) return '';
+      return driveDownload(doc.id).then(function (remote) {
+        var prof = remote && remote.profile ? remote.profile : remote;
+        if (!prof || typeof prof !== 'object' || !prof.id || !prof.akonga) return 'That file isn’t a Rongo mā Tāne profile.';
+        var res = mergeIn(prof);
+        store.profiles[prof.id].drive = { fileId: doc.id, synced: Date.now() };
+        ui.draft = null; ui.confirm = null; saveNow(); render();
+        return res.msg;
+      });
+    });
+  }
+  function driveRun(task) {
+    if (drive.busy) return;
+    drive.busy = true; renderDrive();
+    driveToken().then(task).then(function (msg) { if (msg) toast(msg); }, function (err) {
+      var s = err && err.status;
+      if (s === 403 || s === 404) toast('This Google account can’t reach that Drive file. Use Open from Drive to choose it again, or ask whoever owns it to share it with you.');
+      else if (err && /popup|access_denied/.test(err.message)) toast('Google sign-in was closed before it finished.');
+      else toast('Google Drive didn’t respond. Check the internet connection and try again.');
+    }).then(function () { drive.busy = false; renderDrive(); });
+  }
+  function renderDrive() {
+    var el = $('#drive'); if (!el) return;
+    if (drive.state === 'off') { el.hidden = true; return; }
+    el.hidden = false;
+    var label = '<span class="drive-label"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 0 1-.5-9.97A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg>Google Drive</span>';
+    var msg = { local: 'Open the online version of this tool to use Google Drive.', loading: 'Loading…', error: 'Google Drive couldn’t load. Check the internet connection, then reload the page.' }[drive.state];
+    if (msg) { el.innerHTML = label + '<span class="drive-status">' + msg + '</span>'; return; }
+    var dis = drive.busy ? ' disabled' : '';
+    if (!drive.token) {
+      el.innerHTML = label + '<button type="button" class="btn btn-small btn-primary" data-action="drive-connect"' + dis + '>Sign in with Google</button><span class="drive-status">Keep profiles in a shared Drive folder so whānau and kaiako work on the same one.</span>';
+      return;
+    }
+    var p = P();
+    var when = p.drive && p.drive.synced ? 'Last synced ' + new Date(p.drive.synced).toLocaleString('en-NZ', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) : 'Not in Drive yet';
+    el.innerHTML = label +
+      '<button type="button" class="btn btn-small btn-primary" data-action="drive-sync"' + dis + '>' + (drive.busy ? 'Working…' : 'Sync with Drive') + '</button>' +
+      '<button type="button" class="btn btn-small" data-action="drive-open"' + dis + '>Open from Drive</button>' +
+      '<span class="drive-status">' + esc(when) + ' · Folder: ' + (store.driveFolder ? '<b>' + esc(store.driveFolder.name) + '</b>' : 'not chosen yet') + '</span>' +
+      '<button type="button" class="btn btn-small btn-quiet" data-action="drive-folder"' + dis + '>' + (store.driveFolder ? 'Change folder' : 'Choose folder') + '</button>' +
+      '<button type="button" class="btn btn-small btn-quiet" data-action="drive-signout"' + dis + '>Sign out</button>';
+  }
+
+  /* ---------- Events ---------- */
+  document.addEventListener('input', function (e) {
+    var el = e.target; if (!el.getAttribute) return;
+    var path = el.getAttribute('data-path'); if (!path) return;
+    var r = resolve(path);
+    var v = el.value;
+    if (el.type === 'number') v = el.value === '' ? null : Number(el.value);
+    setPath(r.obj, r.path, v);
+    var pt = el.nextElementSibling; if (pt && pt.classList && pt.classList.contains('print-text')) pt.textContent = el.value;
+    if (!r.draft) { touch(path); queueSave(); }
+    if (el.hasAttribute('data-live')) renderChrome();
+  });
+  document.addEventListener('change', function (e) {
+    var el = e.target;
+    if (el.id === 'learner-select') { store.current = el.value; ui.draft = null; ui.confirm = null; saveNow(); render(); return; }
+    if (el.id === 'open-file') { if (el.files && el.files[0]) openFile(el.files[0]); el.value = ''; return; }
+    var ph = el.getAttribute && el.getAttribute('data-photo');
+    if (ph && el.files && el.files[0]) {
+      readPhoto(el.files[0], function (err, url) {
+        if (err) { toast('That photo couldn’t be opened. Try a JPG or PNG.'); return; }
+        setPath(P(), ph, url); touch(ph); saveNow(); rerender();
+      });
+    }
+  });
+  document.addEventListener('toggle', function (e) { var d = e.target; if (d && d.getAttribute && d.getAttribute('data-ok')) ui.open[d.getAttribute('data-ok')] = d.open; }, true);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-toggle],[data-set],[data-tab],[data-action]');
+    if (!el) return;
+    var p = P();
+    if (el.hasAttribute('data-tab')) { goTab(el.getAttribute('data-tab')); return; }
+    if (el.hasAttribute('data-toggle')) {
+      var tp = el.getAttribute('data-toggle'); var tv = el.getAttribute('data-value');
+      var arr = (val(tp) || []).slice(); var i = arr.indexOf(tv);
+      if (i >= 0) arr.splice(i, 1); else arr.push(tv);
+      setPath(p, tp, arr); touch(tp); queueSave(); rerender(); return;
+    }
+    if (el.hasAttribute('data-set')) {
+      var sp = el.getAttribute('data-set'); var sv = el.getAttribute('data-value');
+      if (el.hasAttribute('data-num')) sv = Number(sv);
+      var r = resolve(sp);
+      setPath(r.obj, r.path, getPath(r.obj, r.path) === sv ? null : sv);
+      if (!r.draft) { touch(sp); queueSave(); }
+      rerender(); return;
+    }
+    var act = el.getAttribute('data-action');
+    if (act === 'new') {
+      var bp = blankProfile(); store.profiles[bp.id] = bp; store.order.push(bp.id); store.current = bp.id;
+      ui.draft = null; ui.confirm = null; saveNow(); goTab('akonga'); window.scrollTo({ top: 0 });
+      toast('New profile started. Begin with the ākonga’s own voice.');
+    } else if (act === 'open-file') { $('#open-file').click(); }
+    else if (act === 'save-file') { saveFile(); }
+    else if (act === 'print') { printProfile(false); }
+    else if (act === 'print-full') { printProfile(true); }
+    else if (act === 'clear-photo') { var cp = el.getAttribute('data-path'); setPath(p, cp, null); touch(cp); saveNow(); rerender(); }
+    else if (act === 'add-idea') {
+      var tip = el.getAttribute('data-value'); var s = (p.kaiako.strategies || '').replace(/\s+$/, '');
+      p.kaiako.strategies = (s ? s + '\n' : '') + '• ' + tip; touch('kaiako.strategies'); queueSave(); rerender(); toast('Added to strategies and interventions.');
+    } else if (act === 'save-review') {
+      var d = ui.draft || newDraft();
+      var rated = INDICATORS.filter(function (ind) { return typeof d[ind.key] === 'number'; });
+      if (!rated.length && !(d.notes || '').trim()) { toast('Rate at least one area, or add a note, before saving.'); return; }
+      var rv = { id: uid('r'), year: Number(d.year) || new Date().getFullYear(), term: d.term || currentTerm(), created: Date.now(), notes: (d.notes || '').trim(), happiness: happyAvg(p, 'whanau'), happy: { akonga: happyAvg(p, 'akonga'), whanau: happyAvg(p, 'whanau'), kaiako: happyAvg(p, 'kaiako') }, sensory: snapshot(p) };
+      INDICATORS.forEach(function (ind) { rv[ind.key] = typeof d[ind.key] === 'number' ? d[ind.key] : null; });
+      p.reviews.push(rv); p.updated = Date.now(); ui.draft = null; saveNow(); render();
+      toast('Saved the ' + rv.year + ' ' + rv.term + ' review.');
+    } else if (act === 'ask-delete-review') { ui.confirm = 'review:' + el.getAttribute('data-value'); rerender(); }
+    else if (act === 'delete-review') {
+      var rid = el.getAttribute('data-value'); p.reviews = p.reviews.filter(function (x) { return x.id !== rid; }); p.updated = Date.now(); ui.confirm = null; saveNow(); render(); toast('Review deleted.');
+    } else if (act === 'ask-delete-profile') { ui.confirm = 'delete-profile'; rerender(); }
+    else if (act === 'delete-profile') {
+      var gone = displayName(p); delete store.profiles[p.id]; store.order = store.order.filter(function (id) { return id !== p.id; });
+      if (!store.order.length) { var nb = blankProfile(); store.profiles[nb.id] = nb; store.order.push(nb.id); }
+      store.current = store.order[0]; ui.confirm = null; ui.draft = null; saveNow(); render(); window.scrollTo({ top: 0 }); toast('Deleted ' + gone + '’s profile from this browser.');
+    } else if (act === 'cancel') { ui.confirm = null; rerender(); }
+    else if (act === 'drive-connect') { driveRun(function () { return 'Signed in to Google Drive.'; }); }
+    else if (act === 'drive-sync') { driveRun(syncToDrive); }
+    else if (act === 'drive-open') { driveRun(openFromDrive); }
+    else if (act === 'drive-folder') { driveRun(function () { return chooseFolder().then(function (f) { return f ? 'Profiles will be saved in ' + f.name + '.' : ''; }); }); }
+    else if (act === 'drive-signout') {
+      try { google.accounts.oauth2.revoke(drive.token, function () {}); } catch (e) { /* already signed out */ }
+      drive.token = null; renderDrive(); toast('Signed out of Google Drive.');
+    }
+  });
+
+  /* ---------- Example learner ---------- */
+  function exampleProfile() {
+    var p = blankProfile();
+    var T = Date.parse('2026-09-24T10:00:00');
+    p.id = 'example-mere'; p.example = true; p.created = Date.parse('2025-08-04T09:00:00'); p.updated = T;
+    var base = { light: [-1, -1, -1], sound: [-1, -2, -1], temperature: [0, 1, 0], touch: [-1, 0, -2], taste: [-1, -2, null], smell: [-2, -1, -1], colour: [0, 0, 0], movement: [2, 2, 1], balance: [2, 1, 2], body: [0, 1, 1] };
+    Object.keys(base).forEach(function (k) { WHOS.forEach(function (w, i) { if (base[k][i] != null) p[w].sensory[k] = base[k][i]; }); });
+    p.akonga = Object.assign(p.akonga, {
+      updated: T, name: 'Mere Tauira', birthdate: '2017-05-14', iwi: 'Example only: whānau add iwi and hapū', whanauMembers: 'Mum, Koro, and cousins Ari and Tia',
+      atua: 'tawhirimatea', atuaWhy: 'I have lots of energy and I like it when the wind is wild.',
+      loves: ['Kapa haka', 'Sport', 'Building', 'Being outside', 'Animals'], lovesOther: 'Riding my bike with Koro',
+      classroom: ['Quiet', 'Natural daylight', 'A cosy corner', 'Working outside', 'Wobble cushion'], classroomComments: 'I like sitting by the window but not in the sun.',
+      learn: ['Someone showing me', 'Hands-on', 'One step at a time', 'Movement breaks', 'Fidget tools', 'Ear muffs or headphones'],
+      happy: { learning: 3, friends: 5, relationships: 5 }, happyComments: 'I like my teacher. Reading is hard.',
+      sensoryComments: 'The hall is too loud. I like it when we go outside.',
+      prepare: ['Karakia', 'Waiata', 'Atua check-in', 'Exercise'], breakFreq: 'I need more breaks', breakComments: 'A short one in the middle of maths.',
+      breakActs: ['Playing with friends', 'Games', 'Walking'], breakOther: 'Climbing the big tree', endDay: ['Waiata', 'Saying hello or goodbye'],
+      dislikes: 'Hand dryers, the fire alarm, and when people stand too close in the line.'
+    });
+    p.whanau = Object.assign(p.whanau, {
+      updated: T, name: 'Hine (example)', relationship: 'Mum', iwi: 'Example only',
+      strengths: 'Kind, funny and so helpful with the little cousins. Knows every waiata from kapa haka and leads them at home.',
+      hopes: 'That Mere keeps loving kura and grows into a confident leader, like Koro.',
+      atua: 'tane', atuaWhy: 'Always climbing trees and asking how things work.',
+      happy: { environment: 4, learning: 3, relationships: 5 },
+      happyNote: { learning: 'Reading is still a worry for us.', relationships: 'Whaea Ana really gets our girl.' },
+      sensoryNotes: 'At home we notice the noise thing most at whānau gatherings.',
+      important: 'Covering ears and hiding is Mere saying "I need a break", not being naughty. A job to do with the hands helps settle quickly.'
+    });
+    p.kaiako = Object.assign(p.kaiako, {
+      updated: T, name: 'Whaea Ana (example)', role: 'Kaiako', iwi: 'Example only',
+      strengths: 'Kapa haka tutor; calm voice; knows the whānau well.', hopes: 'That Mere feels proud and confident leading in front of others, and that reading starts to click.',
+      atua: 'tawhirimatea', atuaWhy: 'Huge energy, and when the storm passes the sky is clear and bright.',
+      sensoryObs: 'Shuts down in the hall and at assemblies. Seeks movement all day: rocking on the chair and crashing on the field.',
+      happy: { environment: 3, learning: 3, friends: 3, relationships: 5 },
+      happinessObs: 'Happiest outside and in kapa haka. Quieter and more anxious in reading groups. Friendships can wobble at lunchtime when games get loud.',
+      strategies: '• Ear muffs kept in the classroom kete; Mere chooses when to use them\n• Heavy-work job each morning (carrying the reading box)\n• Movement break every 20 minutes during maths\n• Warning given before assemblies and fire drills'
+    });
+    p.rongo = { updated: T, types: {
+      sound: ['Sudden loud noises', 'Hand dryers', 'Echoey spaces (hall, gym, wharekai)', 'Bells and alarms'],
+      light: ['Overhead or fluorescent lights', 'Glare off whiteboards'],
+      touch: ['Messy hands (glue, paint, sand)', 'Clothing tags and seams', 'Being bumped in lines'],
+      movement: ['Jumping', 'Carrying heavy things', 'Stimming (flapping, rocking, fidgeting)'],
+      smell: ['Cleaning products', 'Food cooking'], balance: ['Swinging', 'Climbing']
+    }, notes: {
+      sound: 'Ear muffs help a lot. Give a warning before the bell.',
+      touch: 'Whānau notice less of this at home. Is it the busy classroom rather than touch itself?'
+    } };
+    p.tikanga = Object.assign(p.tikanga, {
+      updated: T, preferredName: 'Mere', pronunciation: 'MEH-reh',
+      reo: ['Karakia to start the day', 'Waiata', 'Bilingual instructions', 'Kapa haka'], care: ['Head is tapu: do not touch'],
+      touch: 'Ask first', eye: 'Do not require eye contact', space: "Arm's length", decide: 'Whānau-centred decisions', contactPerson: 'Mum, then Koro',
+      clothing: ['Tags removed', 'Hoodie or hat']
+    });
+    p.plan = { updated: T, implications: 'Mere learns best when moving and doing. Noise is the biggest barrier at kura, especially in big echoey spaces. Plan movement into every block, protect a quiet space, and prepare Mere before loud events.' };
+    function snap(shift) {
+      var o = {}; Object.keys(base).forEach(function (k) { o[k] = {}; WHOS.forEach(function (w, i) { var v = base[k][i]; o[k][w] = v == null ? null : Math.max(-2, Math.min(2, v + (shift[k] || 0))); }); }); return o;
+    }
+    function R(id, year, term, date, v, h, notes, shift) { return { id: id, year: year, term: term, created: Date.parse(date), wellbeing: v[0], regulation: v[1], engagement: v[2], environment: v[3], happiness: h[1], happy: { akonga: h[0], whanau: h[1], kaiako: h[2] }, notes: notes, sensory: snap(shift) }; }
+    p.reviews = [
+      R('ex-r1', 2025, 'Term 3', '2025-09-19', [2, 2, 2, 2], [2.3, 2.7, 2.5], 'Profile started with Mere and whānau. Shutdowns in the hall and at assemblies most weeks.', { sound: -1, light: -1, smell: -1 }),
+      R('ex-r2', 2025, 'Term 4', '2025-12-10', [3, 2, 3, 2], [3.0, 3.0, 2.8], 'Ear muffs and a quiet corner introduced. Fewer shutdowns, but the hall is still hard.', { sound: -1, light: -1 }),
+      R('ex-r3', 2026, 'Term 1', '2026-04-08', [3, 3, 3, 3], [3.7, 3.3, 3.0], 'New class. The morning heavy-work job is helping Mere settle.', { sound: -1 }),
+      R('ex-r4', 2026, 'Term 2', '2026-07-01', [4, 3, 4, 3], [4.0, 3.7, 3.3], 'Movement breaks in maths are working. Mere joined the front row in kapa haka.', {}),
+      R('ex-r5', 2026, 'Term 3', '2026-09-24', [4, 4, 3, 4], [4.3, 4.0, 3.5], 'Calmer at assemblies with warnings and ear muffs. Wharekai noise is still hard. Touch: views differ, so talk about it at the next hui.', {})
+    ];
+    return p;
+  }
+
+  /* ---------- Start ---------- */
+  load();
+  if (IS_ARTIFACT) { $('#print-btn').textContent = 'Download summary'; $('#print-full-btn').textContent = 'Download full profile'; }
+  // The Rongo carving is hosted online; offline or where it is blocked, show the poutama mark instead.
+  var brandImg = $('#brand-img');
+  function brandFallback() { brandImg.hidden = true; $('#brand-mark').hidden = false; }
+  if (brandImg.complete && !brandImg.naturalWidth) brandFallback(); else brandImg.addEventListener('error', brandFallback);
+  driveInit();
+  render();
+})();
+</script>
