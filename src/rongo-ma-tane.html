@@ -1009,11 +1009,11 @@ body.export .print-text { display: block; }
 
   function viewTikanga(p) {
     return head('Tikanga', 'Culture, identity and care', 'Culture shapes how a learner expresses, understands and manages neurodivergence. For example, neurodivergent ākonga who whakapapa Māori may be seen as taonga with enhanced mana, and whānau-centred decisions may be preferred over individual choice. Record what matters to this ākonga and their whānau, and check it with them.', 'Ākonga, whānau and kaiako together') +
-      card('Name and pronunciation', '<div class="grid-3">' + field('Preferred name', 'tikanga.preferredName', { live: true }) + field('How to say it', 'tikanga.pronunciation', { placeholder: 'e.g. MEH-reh, or who to check with' }) + field('Meaning of the name', 'tikanga.nameMeaning', { type: 'textarea', rows: 1, grow: true, placeholder: 'e.g. who they are named after' }) + '</div>') +
+      card('Name and pronunciation', '<div class="grid-3">' + field('Preferred name', 'tikanga.preferredName', { live: true }) + field('How to say it', 'tikanga.pronunciation', { placeholder: 'e.g. MEH-reh, or who to check with' }) + field('Meaning of the name', 'tikanga.nameMeaning', { type: 'textarea', rows: 1, grow: true, placeholder: 'What it means and where it comes from' }) + '</div>') +
       card('Transferable culture and care', chips('tikanga.reo', REO.concat(OTHER_CULTURE), 'Transferable culture and care') +
         '<div class="grid-2">' + field('Other cultures and languages', 'tikanga.cultures', { placeholder: 'e.g. Samoan, Tongan, Hindi, Mandarin' }) + '</div>' +
         '<h4>Care for tapu</h4>' + chips('tikanga.care', CARE, 'Care for tapu') +
-        field('Notes', 'tikanga.reoNotes', { type: 'textarea', rows: 2 }), 'Te reo Māori and English first, then anything from other cultures the ākonga belongs to.') +
+        field('Notes', 'tikanga.reoNotes', { type: 'textarea', rows: 2 })) +
       card('Touch, eye contact and personal space', '<h4>Physical contact</h4>' + options('tikanga.touch', TOUCH, 'Physical contact') + '<h4>Eye contact</h4>' + options('tikanga.eye', EYE, 'Eye contact') + '<h4>Personal space</h4>' + options('tikanga.space', SPACE, 'Personal space') + field('Notes', 'tikanga.contactNotes', { type: 'textarea', rows: 2 })) +
       '<div class="grid-2">' + card('Decision-making', options('tikanga.decide', DECIDE, 'Decision-making') + field('Who should we talk with first?', 'tikanga.contactPerson')) +
       card('Clothing', chips('tikanga.clothing', CLOTHING, 'Clothing') + field('Notes', 'tikanga.clothingNotes')) + '</div>' +
@@ -1721,7 +1721,7 @@ body.export .print-text { display: block; }
       touch: 'Whānau notice less of this at home. Is it the busy classroom rather than touch itself?'
     } };
     p.tikanga = Object.assign(p.tikanga, {
-      updated: T, preferredName: 'Mere', pronunciation: 'MEH-reh', nameMeaning: 'Named after her great-grandmother (example)',
+      updated: T, preferredName: 'Mere', pronunciation: 'MEH-reh', nameMeaning: 'Māori form of Mary',
       reo: ['Karakia to start the day', 'Waiata', 'Bilingual instructions', 'Kapa haka', 'Faith prayers or prayer times', 'Cultural days to plan around'], care: ['Head is tapu: do not touch'],
       cultures: 'Samoan, on Nana’s side (example)',
       touch: 'Ask first', eye: 'Do not require eye contact', space: "Arm's length", decide: 'Whānau-centred decisions', contactPerson: 'Mum, then Koro',
