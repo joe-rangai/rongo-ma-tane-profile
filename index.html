@@ -1011,7 +1011,7 @@ body.export .print-text { display: block; }
   function viewTikanga(p) {
     return head('Tikanga', 'Culture, identity and care', 'Culture shapes how a learner expresses, understands and manages neurodivergence. For example, neurodivergent ākonga who whakapapa Māori may be seen as taonga with enhanced mana, and whānau-centred decisions may be preferred over individual choice. Record what matters to this ākonga and their whānau, and check it with them.', 'Ākonga, whānau and kaiako together') +
       card('Name and pronunciation', '<div class="grid-3">' + field('Preferred name', 'tikanga.preferredName', { live: true }) + field('How to say it', 'tikanga.pronunciation', { placeholder: 'e.g. MEH-reh, or who to check with' }) + field('Meaning of the name', 'tikanga.nameMeaning', { type: 'textarea', rows: 1, grow: true, placeholder: 'What it means and where it comes from' }) + '</div>') +
-      card('Transferable culture and care', chips('tikanga.reo', REO.concat(OTHER_CULTURE), 'Transferable culture and care') +
+      card('Culture and language in the day', chips('tikanga.reo', REO.concat(OTHER_CULTURE), 'Culture and language in the day') +
         '<div class="grid-2">' + field('Other cultures and languages', 'tikanga.cultures', { placeholder: 'e.g. Samoan, Tongan, Hindi, Mandarin' }) + '</div>' +
         '<h4>Care for tapu</h4>' + chips('tikanga.care', CARE, 'Care for tapu') +
         field('Notes', 'tikanga.reoNotes', { type: 'textarea', rows: 2 })) +
@@ -1276,7 +1276,7 @@ body.export .print-text { display: block; }
       ['Preferred name', ans(t.preferredName)],
       ['How to say it', ans(t.pronunciation)],
       ['Meaning of the name', ans(t.nameMeaning)],
-      ['Transferable culture and care', picks(t.reo)],
+      ['Culture and language in the day', picks(t.reo)],
       ['Other cultures and languages', ans(t.cultures)],
       ['Care for tapu', picks(t.care)],
       ['Culture and care notes', ans(t.reoNotes)],
